@@ -7,14 +7,14 @@ export class ExposuresService {
   constructor(private http: Http) {}
 
   query(): any {
-   return this.http.get('data/exposures.json')
+   return this.http.get('app/data/exposures.json')
    .map((res: Response) => {
      return res.json();
    });
   }
 
   get(id: string): any {
-   return this.http.get('data/exposures.json')
+   return this.http.get('app/data/exposures.json')
    .map((res: Response) => {
      let item: any;
      res.json().forEach((s: any) => {
