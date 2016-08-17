@@ -12,7 +12,8 @@ export class ProjectConfig extends SeedConfig {
 
   FONTS_DEST = `${this.APP_DEST}/fonts`;
   FONTS_SRC = [
-      'node_modules/bootstrap/dist/fonts/**'
+      'node_modules/bootstrap/dist/fonts/**',
+      'node_modules/font-awesome/fonts/**',
   ];
 
   constructor() {
@@ -37,6 +38,7 @@ export class ProjectConfig extends SeedConfig {
       {src: `${this.CSS_SRC}/bootstrap.css`, inject: true, vendor: false},
       {src: `${this.CSS_SRC}/collateral.css`, inject: true, vendor: false},
       {src: `${this.CSS_SRC}/sidemenu.css`, inject: true, vendor: false},
+      {src: `${this.CSS_SRC}/font-awesome.css`, inject: true, vendor: false},
 
       // {src: `${this.APP_SRC}/your-path-to-lib/libs/jquery-ui.js`, inject: true, vendor: false}
       // {src: `${this.CSS_SRC}/path-to-lib/test-lib.css`, inject: true, vendor: false},

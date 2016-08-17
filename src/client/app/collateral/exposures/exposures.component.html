@@ -21,7 +21,9 @@
                     </thead>
                     <tbody>
                         <tr *ngFor="let exposure of exposures">
-                            <td><a ui-sref="exposure-detail({id:exposure.id})">{{exposure.id}}</a></td>
+                            <td>
+                                <a [routerLink]="[exposure.id]">{{exposure.id}}</a>
+                            </td>
                             <td>{{exposure.name}}</td>
                             <td>{{exposure.description}}</td>
                             <td>{{exposure.code}}</td>

@@ -3,6 +3,7 @@ import { RouterConfig } from '@angular/router';
 import { ContractsComponent } from './index';
 import { ExposuresComponent } from './index';
 import { DashboardComponent } from './index';
+import { ExposureDetailsComponent } from './index';
 
 export const CollateralRoutes: RouterConfig = [
   {
@@ -16,5 +17,10 @@ export const CollateralRoutes: RouterConfig = [
   {
     path: 'contracts',
     component: ContractsComponent
+  },
+  {
+    path: 'exposures/:id', 
+    component: ExposureDetailsComponent
   }
+
 ];

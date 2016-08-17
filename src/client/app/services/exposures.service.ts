@@ -1,4 +1,6 @@
 import { Injectable } from '@angular/core';
+import {Observable} from 'rxjs/Rx';
+
 import { Http, Response } from '@angular/http';
 
 @Injectable()
@@ -13,16 +15,18 @@ export class ExposuresService {
    });
   }
 
-  get(id: string): any {
+  getOneById(id: string): Observable<any> {
    return this.http.get('app/data/exposures.json')
    .map((res: Response) => {
      let item: any;
      res.json().forEach((s: any) => {
-       if (s.item_id === id) {
+       if (s.id == id) {
          item = s;
        }
      });
      return item;
    });
   }
+
+  
 }

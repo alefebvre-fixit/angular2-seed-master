@@ -1,0 +1,19 @@
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h2 class="panel-title item-section">Exposure</h2>
+  </div>
+
+  <tabset [justified]="false">
+    <tab heading="SUMMARY">
+      <exposure-summary [exposure]='exposure'> </exposure-summary>
+    </tab>
+    <tab heading="UNDERLYINGS">
+      <exposure-underlyings></exposure-underlyings>
+    </tab>
+    <tab heading="COLLATERALS">
+      <exposure-collaterals></exposure-collaterals>
+    </tab>
+  </tabset>
+</div>
+
+
