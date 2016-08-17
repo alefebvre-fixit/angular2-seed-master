@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {DROPDOWN_DIRECTIVES} from 'ng2-bootstrap/ng2-bootstrap';
+import { ROUTER_DIRECTIVES } from '@angular/router';
 
 /**
  * This class represents the toolbar component.
@@ -9,7 +10,7 @@ import {DROPDOWN_DIRECTIVES} from 'ng2-bootstrap/ng2-bootstrap';
   selector: 'sd-toolbar',
   templateUrl: 'toolbar.component.html',
   styleUrls: ['toolbar.component.css'],
-  directives: [DROPDOWN_DIRECTIVES],
+  directives: [DROPDOWN_DIRECTIVES, ROUTER_DIRECTIVES],
 })
 export class ToolbarComponent {
 
@@ -27,8 +28,7 @@ export class ToolbarComponent {
     $event.stopPropagation();
     this.status.isopen = !this.status.isopen;
   }
-
-
-
 	
 }
+
+
