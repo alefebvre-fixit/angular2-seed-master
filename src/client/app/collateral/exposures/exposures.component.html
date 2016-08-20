@@ -1,15 +1,20 @@
 <div class="panel panel-primary">
-  <div class="panel-heading">
-    <h2 class="panel-title item-section">Exposures</h2>
+  <div class="panel-heading intro">
+    <h2 class="panel-title item-section">Exposures Intro</h2>
   </div>
-  <div class="panel-body panel-body-main">
+  <div class="tab-body">
     <div class="panel panel-default">
-      <div class="panel-heading">
+      <div class="heading">
+        <h3 class="panel-title">
+            hello
+        </h3>
+      </div>
+      <div class="panel-heading tab-header">
         <h3 class="panel-title">Exposures</h3>
       </div>
-      <div class="panel-body">
+      <div class="table-body">
             <div class="table-responsive">
-                <table class="jh-table table table-striped">
+                <table class="table ">
                     <thead>
                         <tr>
                             <th><span>ID</span></th>
@@ -20,7 +25,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr *ngFor="let exposure of exposures">
+                        <tr *ngFor="let exposure of exposures ; trackBy:id;">
                             <td>
                                 <a [routerLink]="[exposure.id]">{{exposure.id}}</a>
                             </td>
@@ -29,24 +34,10 @@
                             <td>{{exposure.code}}</td>
                             <td class="text-right">
                                 <div class="btn-group flex-btn-group-container">
-                                    <button type="submit"
-                                            ui-sref="exposure-detail({id:exposure.id})"
-                                            class="btn btn-info btn-sm">
-                                        <span class="glyphicon glyphicon-eye-open"></span>
+                                    <a [routerLink]="[exposure.id]" class="btn btn-link">
+                                        <span class="glyphicon glyphicon-zoom-in"></span>
                                         <span class="hidden-xs hidden-sm"></span>
-                                    </button>
-                                    <button type="submit"
-                                            ui-sref="exposure.edit({id:exposure.id})"
-                                            class="btn btn-primary btn-sm">
-                                        <span class="glyphicon glyphicon-pencil"></span>
-                                        <span class="hidden-xs hidden-sm"></span>
-                                    </button>
-                                    <button type="submit"
-                                            ui-sref="exposure.delete({id:exposure.id})"
-                                            class="btn btn-danger btn-sm">
-                                        <span class="glyphicon glyphicon-remove-circle"></span>
-                                        <span class="hidden-xs hidden-sm"></span>
-                                    </button>
+                                    </a>
                                 </div>
                             </td>
                         </tr>

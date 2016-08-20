@@ -1,1 +1,86 @@
-<p>Summary {{exposure.name}}</p>
+<div class="tab-body">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+        <h3 class="panel-title">Summary</h3>
+        </div>
+        <div class="panel-body">
+        This is a summary23
+        </div>
+    </div>
+
+    <div class="figures">
+            <table>
+                <tbody>
+                <tr>
+                    <td>
+                        {{exposure.netBalance}}
+                        <div class="grey">Net Balance</div>
+                    </td>
+                    <td>
+                        {{exposure.cashPosition}}
+                        <div class="grey">Cash Position</div>
+                    </td>
+                    <td>
+                        {{exposure.securityPosition}}
+                        <div class="grey">Security Position</div>	
+                    </td>
+                    <td>
+                        {{exposure.requiredMargin}}
+                        <div class="grey">Required Margin</div>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+    </div>
+
+<br>
+
+<div class="row">
+  <div class="col-md-4">
+  	  <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">Threshold</h3>
+        </div>
+        <div class="panel-body">
+        Threshold Details
+        </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+  	  <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Rounding</h3>
+      </div>
+      <div class="panel-body">
+      Rounding details
+      </div>
+    </div>
+  </div>
+    <div class="col-md-4">
+  	  <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">MTA</h3>
+      </div>
+      <div class="panel-body">
+      MTA details {{exposure.mta.rating | json}}
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

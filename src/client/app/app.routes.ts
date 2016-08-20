@@ -6,10 +6,16 @@ import { CollateralRoutes } from './collateral/index';
 import { AccountRoutes } from './account/index';
 
 const routes: RouterConfig = [
+        
   ...HomeRoutes,
   ...AboutRoutes,
   ...CollateralRoutes,
-  ...AccountRoutes
+  ...AccountRoutes,
+  {
+        path: '',
+        redirectTo: 'collateral/dashboard',
+        pathMatch: 'full'
+      }
 ];
 
 export const APP_ROUTER_PROVIDERS = [

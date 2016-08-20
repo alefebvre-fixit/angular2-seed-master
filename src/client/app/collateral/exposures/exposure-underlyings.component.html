@@ -1,1 +1,33 @@
-<p>Underlyings</p>
+<div class="tab-body">
+
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Underlyings</h3>
+      </div>
+      <div class="panel-body">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span>ID</span></th>
+                    <th><span>Name</span></th>
+                    <th><span>Description</span></th>
+                    <th><span>Agreement</span></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let underlying of underlyings">
+                    <td><a ui-sref="underlying-detail.summary({id:underlying.id})">{{underlying.id}}</a></td>
+                    <td>{{underlying.name}}</td>
+                    <td>{{underlying.description}}</td>
+                    <td>{{underlying.agreement}}</td>
+                </tr>
+            </tbody>
+        </table>
+      </div>
+    </div>
+
+
+
+</div>
+
+

@@ -31,10 +31,8 @@ export class ExposuresComponent implements OnInit {
   }
 
   loadExposures(): void {
-    
-  this.exposuresService.query().subscribe((exposures: Object[]) => {
-    this.exposures = exposures;
-  });
-    
+    this.exposuresService.getAll().subscribe((exposures: Object[]) => {
+      this.exposures = exposures;
+    });
   }
 }
