@@ -19,23 +19,18 @@ export class ContractsComponent implements OnInit {
 
   constructor(private router: Router, private contractsService: ContractsService) {}
 
-  goBack(route: string): void {
-    this.router.navigate(['/']);
-  }
-
-  userClick(id: string): void {
-    alert('clicked on contract: ' + id);
-  }
-
   ngOnInit(): void {
     this.loadContracts();
   }
 
   loadContracts(): void {
-    
-  this.contractsService.query().subscribe((contracts: Object[]) => {
-    this.contracts = contracts;
-  });
-    
+    this.contractsService.query().subscribe((contracts: Object[]) => {
+      this.contracts = contracts;
+    });
   }
+
+
+
+
+
 }

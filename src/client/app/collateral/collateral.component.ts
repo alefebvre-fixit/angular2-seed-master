@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { ROUTER_DIRECTIVES } from '@angular/router';
 import {AlertComponent} from 'ng2-bootstrap/ng2-bootstrap';
 
-import { Config, NavbarComponent, ToolbarComponent } from '../shared/index';
+import { Config, ToolbarComponent } from '../shared/index';
 
 /**
  * This class represents the main application component. Within the @Routes annotation is the configuration of the
@@ -12,7 +12,8 @@ import { Config, NavbarComponent, ToolbarComponent } from '../shared/index';
   moduleId: module.id,
   viewProviders: [],
   templateUrl: 'collateral.component.html',
-  directives: [ROUTER_DIRECTIVES, NavbarComponent, ToolbarComponent]
+  styleUrls: ['collateral.component.css'],
+  directives: [ROUTER_DIRECTIVES, ToolbarComponent]
 })
 export class CollateralComponent {
   constructor() {
