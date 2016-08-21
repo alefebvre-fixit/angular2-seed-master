@@ -9,9 +9,9 @@ export class ExposuresService {
 
   constructor(private http: Http) {}
 
+/*
   getAll(): any {
-  return this.http.get('app/data/contracts.json')
-   //return this.http.get(URL_BASE + 'exposures')
+   return this.http.get(URL_BASE + 'exposures')
    .map((res: Response) => {
      return res.json();
    });
@@ -32,6 +32,37 @@ export class ExposuresService {
      return res.json();
    });
   }
+*/
+
+  getAll(): any {
+   return this.http.get('app/data/exposures.json')
+   .map((res: Response) => {
+     return res.json();
+   });
+  }
+
+  getUnderlyingsByExposureId(): any {
+   return this.http.get('app/data/underlyings.json')
+   .map((res: Response) => {
+     return res.json();
+   });
+  }
+
+  getOneById(id: string): Observable<any> {
+   return this.http.get('app/data/exposures.json')
+   .map((res: Response) => {
+     let item: any;
+     res.json().forEach((s: any) => {
+       if (s.id == id) {
+         item = s;
+       }
+     });
+     return item;
+   });
+  }
+
+
+
 
   
 }

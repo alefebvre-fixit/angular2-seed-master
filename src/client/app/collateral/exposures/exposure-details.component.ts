@@ -4,6 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import {CORE_DIRECTIVES} from '@angular/common';
 import {TAB_DIRECTIVES} from 'ng2-bootstrap/ng2-bootstrap';
 
+import { SectionComponent } from '../../shared/index';
 import { ExposuresService } from '../../services/index';
 import { ExposureSummaryComponent } from './exposure-summary.component';
 import { ExposureUnderlyingsComponent } from './exposure-underlyings.component';
@@ -15,7 +16,7 @@ import { ExposureCollateralsComponent } from './exposure-collaterals.component';
   templateUrl: 'exposure-details.component.html',
   styleUrls: ['exposure-details.component.css'],
   directives: [
-    ROUTER_DIRECTIVES,TAB_DIRECTIVES,ExposureSummaryComponent,ExposureUnderlyingsComponent,ExposureCollateralsComponent
+    ROUTER_DIRECTIVES,TAB_DIRECTIVES,SectionComponent,ExposureSummaryComponent,ExposureUnderlyingsComponent,ExposureCollateralsComponent
   ],
   viewProviders: [ ExposuresService ],
 })

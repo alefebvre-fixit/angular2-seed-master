@@ -1,10 +1,8 @@
-<div class="panel panel-primary">
-  <div class="panel-heading">
-    <h2 class="panel-title item-section">Exposure</h2>
-  </div>
+<section [name]="'Exposure'"></section>
 
+  <div style="background-color: white;">  
   <tabset [justified]="false">
-    <tab heading="SUMMARY">
+    <tab heading="SUMMARY" >
       <exposure-summary [exposure]="'exposure'"> </exposure-summary>
     </tab>
     <tab heading="UNDERLYINGS">
@@ -14,6 +12,6 @@
       <exposure-collaterals></exposure-collaterals>
     </tab>
   </tabset>
-</div>
+  </div>
 
 

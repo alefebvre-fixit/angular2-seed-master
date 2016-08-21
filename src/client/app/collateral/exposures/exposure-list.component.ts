@@ -5,8 +5,8 @@ import { ExposuresService } from '../../services/index';
 
 @Component({
   moduleId: module.id,
-  templateUrl: 'exposures.component.html',
-  styleUrls: ['exposures.component.css'],
+  templateUrl: 'exposure-list.component.html',
+  styleUrls: ['exposure-list.component.css'],
   directives: [
     ROUTER_DIRECTIVES,SectionComponent,
   ],
