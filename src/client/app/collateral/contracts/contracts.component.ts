@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ROUTER_DIRECTIVES } from '@angular/router';
+import { SectionComponent } from '../../shared/index';
 
 import { ContractsService } from '../../services/index';
 
@@ -8,7 +9,7 @@ import { ContractsService } from '../../services/index';
   templateUrl: 'contracts.component.html',
   styleUrls: ['contracts.component.css'],
   directives: [
-    ROUTER_DIRECTIVES,
+    ROUTER_DIRECTIVES,SectionComponent,
   ],
   viewProviders: [ ContractsService ],
 })

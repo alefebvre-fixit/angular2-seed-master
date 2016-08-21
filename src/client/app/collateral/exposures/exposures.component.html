@@ -1,20 +1,18 @@
-<div class="panel panel-primary">
-  <div class="panel-heading intro">
-    <h2 class="panel-title item-section">Exposures Intro</h2>
-  </div>
-  <div class="tab-body">
+<section [name]="'Exposures'"></section>
+
+
+  <div class="table-container">
     <div class="panel panel-default">
-      <div class="heading">
-        <h3 class="panel-title">
-            hello
-        </h3>
-      </div>
-      <div class="panel-heading tab-header">
-        <h3 class="panel-title">Exposures</h3>
+      <div class="panel-heading table-toolbar">
+        <div class="inner-addon left-addon">
+        <i class="glyphicon glyphicon-search"></i>
+        <input type="text" class="form-control search-toolbar" placeholder="Search" />
+    </div>
+
       </div>
       <div class="table-body">
             <div class="table-responsive">
-                <table class="table ">
+                <table class="table">
                     <thead>
                         <tr>
                             <th><span>ID</span></th>
@@ -33,12 +31,9 @@
                             <td>{{exposure.description}}</td>
                             <td>{{exposure.code}}</td>
                             <td class="text-right">
-                                <div class="btn-group flex-btn-group-container">
                                     <a [routerLink]="[exposure.id]" class="btn btn-link">
                                         <span class="glyphicon glyphicon-zoom-in"></span>
-                                        <span class="hidden-xs hidden-sm"></span>
                                     </a>
-                                </div>
                             </td>
                         </tr>
                     </tbody>
@@ -47,4 +42,3 @@
       </div>
     </div>
   </div>
-</div>

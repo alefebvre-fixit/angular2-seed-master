@@ -10,7 +10,8 @@ export class ExposuresService {
   constructor(private http: Http) {}
 
   getAll(): any {
-   return this.http.get(URL_BASE + 'exposures')
+  return this.http.get('app/data/contracts.json')
+   //return this.http.get(URL_BASE + 'exposures')
    .map((res: Response) => {
      return res.json();
    });

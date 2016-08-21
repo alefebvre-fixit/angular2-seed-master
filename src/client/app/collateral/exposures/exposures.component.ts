@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ROUTER_DIRECTIVES } from '@angular/router';
-
+import { SectionComponent } from '../../shared/index';
 import { ExposuresService } from '../../services/index';
 
 @Component({
@@ -8,7 +8,7 @@ import { ExposuresService } from '../../services/index';
   templateUrl: 'exposures.component.html',
   styleUrls: ['exposures.component.css'],
   directives: [
-    ROUTER_DIRECTIVES,
+    ROUTER_DIRECTIVES,SectionComponent,
   ],
   viewProviders: [ ExposuresService ],
 })
