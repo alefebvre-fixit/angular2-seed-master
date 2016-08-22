@@ -7,7 +7,7 @@ import { Router, ROUTER_DIRECTIVES } from '@angular/router';
   templateUrl: 'exposure-summary.component.html',
   styleUrls: ['exposure-summary.component.css'],
   directives: [
-    ROUTER_DIRECTIVES,
+    ROUTER_DIRECTIVES
   ],
   viewProviders: [],
 })

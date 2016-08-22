@@ -1,43 +1,8 @@
-
-
-.table-toolbar{
-    border-bottom: 1px solid ;
-    border-bottom-color: #dddddd;
-    color: #333333;
-    padding: 2px;
-}
-
-.table-container{
-    padding:50px;
-}
-
-
-.table td,
-  .table th {
-    background-color: #fff !important;
-    vertical-align:middle;
-  }
-
-.table tr:hover {
-    text-decoration: none;
-    color: #3390fb;
-    background: #3390fb;
-}
-
-  .table th {
-    background-color: #f5f5f5 !important;
-    vertical-align:middle;
-    color: #333333;
-    border-bottom: 1px solid ;
-    border-bottom-color: #dddddd;
-  }
-
-
 .search-toolbar{
   box-shadow: none;
 }
 
-  /* enable absolute positioning */
+/* enable absolute positioning */
 .inner-addon { 
     position: relative; 
 }

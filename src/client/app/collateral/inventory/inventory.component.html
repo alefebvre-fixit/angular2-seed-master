@@ -1,0 +1,53 @@
+<section [name]="'Inventory'"></section>
+
+
+
+
+  <div class="table-container">
+    <div class="panel panel-default">
+      <div class="panel-heading table-toolbar">
+
+          <table style="width:100%">
+              <tr>
+                  <td>
+                    <div class="inner-addon left-addon">
+                        <i class="glyphicon glyphicon-search"></i>
+                        <input type="text" class="form-control search-toolbar" placeholder="Search" />
+                    </div>                  
+                </td>
+                  <td style="text-align:right">
+                    <a href="#" class="btn btn-primary">UPLOAD INVENTORY</a>
+                  </td>
+              </tr>
+          </table>
+    </div>
+      <div class="table-body">
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th><span>Name</span></th>
+                            <th><span>ISIN</span></th>
+                            <th><span>Location</span></th>
+                            <th><span>Maturity</span></th>
+                            <th><span>Last</span></th>
+                            <th><span>Volume</span></th>
+                            <th><span>Turnover</span></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let position of positions;">
+                            <td>{{position.name}}</td>
+                            <td>{{position.ISIN}}</td>
+                            <td>{{position.location}}</td>
+                            <td>{{position.maturity}}</td>
+                            <td>{{position.last}}</td>
+                            <td>{{position.volume}}</td>
+                            <td>{{position.turnover}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+      </div>
+    </div>
+  </div>

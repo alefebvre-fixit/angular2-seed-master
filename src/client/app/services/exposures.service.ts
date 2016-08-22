@@ -41,7 +41,7 @@ export class ExposuresService {
    });
   }
 
-  getUnderlyingsByExposureId(): any {
+  getUnderlyingsByExposureId(id: string): any {
    return this.http.get('app/data/underlyings.json')
    .map((res: Response) => {
      return res.json();

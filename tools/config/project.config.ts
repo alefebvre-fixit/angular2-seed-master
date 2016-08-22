@@ -18,7 +18,7 @@ export class ProjectConfig extends SeedConfig {
 
   constructor() {
     super();
-    // this.APP_TITLE = 'Put name of your app here';
+    this.APP_TITLE = 'Collateral';
 
     /* Enable typeless compiler runs (faster) between typed compiler runs. */
     // this.TYPED_COMPILE_INTERVAL = 5;
@@ -28,6 +28,9 @@ export class ProjectConfig extends SeedConfig {
       ...this.NPM_DEPENDENCIES,
       { src: 'moment/moment.js', inject: 'libs' },
       { src: 'ng2-bootstrap/bundles/ng2-bootstrap.min.js', inject: 'libs' },
+      { src: 'chart.js/dist/Chart.bundle.min.js', inject: 'libs' },
+      { src: 'ng2-charts/bundles/ng2-charts.min.js', inject: 'libs' },
+
       // {src: 'jquery/dist/jquery.min.js', inject: 'libs'},
       // {src: 'lodash/lodash.min.js', inject: 'libs'},
     ];
@@ -39,6 +42,7 @@ export class ProjectConfig extends SeedConfig {
       {src: `${this.CSS_SRC}/collateral.css`, inject: true, vendor: false},
       {src: `${this.CSS_SRC}/sidemenu.css`, inject: true, vendor: false},
       {src: `${this.CSS_SRC}/font-awesome.css`, inject: true, vendor: false},
+      {src: `${this.CSS_SRC}/collateral-table.css`, inject: true, vendor: false},
 
       // {src: `${this.APP_SRC}/your-path-to-lib/libs/jquery-ui.js`, inject: true, vendor: false}
       // {src: `${this.CSS_SRC}/path-to-lib/test-lib.css`, inject: true, vendor: false},
