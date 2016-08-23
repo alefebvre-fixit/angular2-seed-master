@@ -1,0 +1,8 @@
+.section-button{
+    box-shadow: none;
+    color:#b2dbfb;
+}
+
+.section-button :hover {
+    color:white;
+}

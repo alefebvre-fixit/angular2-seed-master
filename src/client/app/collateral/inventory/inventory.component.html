@@ -1,6 +1,26 @@
 <section [name]="'Inventory'"></section>
 
 
+<button type="button" class="btn btn-primary" (click)="switch()">LOAD</button>
+
+<br>
+Something is happening here:
+<br>
+Loading: {{loading}}
+<br>
+
+
+    <div width="" style="width:50%; border:solid 3px;">
+    <loading-container [loading]="loading"></loading-container>
+        Inside the container<br>
+        Line 1<br>
+        Line 1<br>
+        Line 1<br>
+        Line 1<br>
+        Line 1<br>
+    </div>
+
+
 
 
   <div class="table-container">

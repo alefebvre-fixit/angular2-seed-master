@@ -14,4 +14,14 @@ export class InventoryService {
    });
   }
 
+  getMockPositions(): any {
+   return this.http.get('app/data/inventory.json')
+   .map((res: Response) => {
+         setTimeout(() => {
+     return res.json();
+    }, 2000);
+   });
+  }
+
+
 }
