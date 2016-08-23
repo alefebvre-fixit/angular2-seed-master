@@ -19,7 +19,7 @@ export class InventoryComponent extends LoadingPage implements OnInit {
   positions: Object[];
 
   constructor(private router: Router, private inventoryService: InventoryService) {
-    super(true);
+    super(false);
   }
 
   switch(): void{

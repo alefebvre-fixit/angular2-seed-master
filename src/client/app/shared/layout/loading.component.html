@@ -1,0 +1,10 @@
+<div class="loading-wrapper">
+  <div [ngSwitch]="loading">
+    <div *ngSwitchCase="true">
+      <div class="loading-overlay">
+        <div class="progress-line"></div>
+      </div>
+    </div>
+  </div>
+  <ng-content></ng-content>
+</div>

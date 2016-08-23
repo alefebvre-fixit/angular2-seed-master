@@ -1,32 +1,8 @@
 <section [name]="'Inventory'"></section>
 
-
-<button type="button" class="btn btn-primary" (click)="switch()">LOAD</button>
-
-<br>
-Something is happening here:
-<br>
-Loading: {{loading}}
-<br>
-
-
-    <div width="" style="width:50%; border:solid 3px;">
-    <loading-container [loading]="loading"></loading-container>
-        Inside the container<br>
-        Line 1<br>
-        Line 1<br>
-        Line 1<br>
-        Line 1<br>
-        Line 1<br>
-    </div>
-
-
-
-
   <div class="table-container">
     <div class="panel panel-default">
       <div class="panel-heading table-toolbar">
-
           <table style="width:100%">
               <tr>
                   <td>
@@ -36,11 +12,14 @@ Loading: {{loading}}
                     </div>                  
                 </td>
                   <td style="text-align:right">
-                    <a href="#" class="btn btn-primary">UPLOAD INVENTORY</a>
+                    <button type="button" class="btn btn-primary" (click)="switch()">UPLOAD INVENTORY</button>
                   </td>
               </tr>
           </table>
     </div>
+    <div>
+        <loading-container [loading]="loading">
+
       <div class="table-body">
             <div class="table-responsive">
                 <table class="table">
@@ -69,5 +48,9 @@ Loading: {{loading}}
                 </table>
             </div>
       </div>
+
+
+        </loading-container>
+
     </div>
   </div>
