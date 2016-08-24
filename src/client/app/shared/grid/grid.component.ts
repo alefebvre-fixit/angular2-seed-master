@@ -1,6 +1,7 @@
 import { Component, OnInit, Input} from '@angular/core';
 import { Router, ROUTER_DIRECTIVES } from '@angular/router';
 import {DROPDOWN_DIRECTIVES} from 'ng2-bootstrap/ng2-bootstrap';
+import { LoadingContainer, LoadingPage } from '../index';
 
 @Component({
   moduleId: module.id,
@@ -8,7 +9,7 @@ import {DROPDOWN_DIRECTIVES} from 'ng2-bootstrap/ng2-bootstrap';
   templateUrl: 'grid.component.html',
   styleUrls: ['grid.component.css'],
   directives: [
-    ROUTER_DIRECTIVES,DROPDOWN_DIRECTIVES
+    ROUTER_DIRECTIVES,DROPDOWN_DIRECTIVES,LoadingContainer
   ],
   viewProviders: [],
 })

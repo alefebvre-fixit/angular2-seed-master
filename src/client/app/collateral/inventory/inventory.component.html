@@ -1,67 +1,7 @@
 <section [name]="'Inventory'"></section>
 
-
-{{loading2}}
 <grid [datas]="positions" [columns]="columns" [loading]="loading2">
         <table-buttons>
           <button type="button" class="btn btn-primary" (click)="switch()">UPLOAD INVENTORY</button>
         </table-buttons>
 </grid>
-
-<div class="table-container">
-    <div class="panel panel-default">
-        <div class="panel-heading table-toolbar">
-            <table style="width:100%">
-                <tr>
-                    <td width="50%">
-                        <div class="inner-addon left-addon">
-                            <i class="glyphicon glyphicon-search"></i>
-                            <input type="text" class="form-control search-toolbar" placeholder="Search" />
-                        </div>
-                    </td>
-                    <td width="50%" style="text-align:right;">
-                        <button type="button" class="btn btn-primary" (click)="switch()">UPLOAD INVENTORY</button>
-                    <div class="btn-group" dropdown>
-                    
-                         <button id="single-button" type="button" class="btn btn-link" dropdownToggle>
-                             <i class="fa fa-ellipsis-v"></i>
-                            </button>
-                            <ul dropdownMenu role="menu" aria-labelledby="single-button" class="dropdown-menu-right">
-                            <li role="menuitem"><a class="dropdown-item" href="#">Export csv</a></li>
-                            <li role="menuitem"><a class="dropdown-item" href="#">Export Json</a></li>
-                            <li class="divider dropdown-divider"></li>
-                            <li role="menuitem"><a class="dropdown-item" href="#">Configure</a></li>
-                            </ul>
-                    </div>
-                
-
-                    </td>
-                </tr>
-            </table>
-        </div>
-    <div>
-    <loading-container [loading]="loading">
-        <div class="table-body">
-            <div class="table-responsive">
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th *ngFor="let column of columns;">
-                                <span>{{column.header}}</span>
-                            </th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr *ngFor="let position of positions;">
-                            <td *ngFor="let column of columns;">
-                                {{position[column.name]}}
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </loading-container>
-        </div>
-    </div>
-</div>
