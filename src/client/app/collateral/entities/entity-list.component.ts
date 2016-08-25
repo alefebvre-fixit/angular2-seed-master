@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ROUTER_DIRECTIVES } from '@angular/router';
 import {DROPDOWN_DIRECTIVES} from 'ng2-bootstrap/ng2-bootstrap';
-
+import { SectionComponent, GridComponent} from '../../shared/index';
+import { EntityService } from '../../services/index';
 
 
 @Component({
@@ -9,15 +10,15 @@ import {DROPDOWN_DIRECTIVES} from 'ng2-bootstrap/ng2-bootstrap';
   templateUrl: 'entity-list.component.html',
   styleUrls: ['entity-list.component.css'],
   directives: [
-    ROUTER_DIRECTIVES,DROPDOWN_DIRECTIVES
+    ROUTER_DIRECTIVES,DROPDOWN_DIRECTIVES,SectionComponent, GridComponent
   ],
-  viewProviders: [],
+  viewProviders: [ EntityService ],
 })
 export class EntityListComponent  implements OnInit {
 
   entities: Object[];
 
-  constructor(private router: Router) {
+  constructor(private router: Router, private entityService: EntityService) {
   }
 
   ngOnInit(): void {
@@ -25,6 +26,9 @@ export class EntityListComponent  implements OnInit {
   }
 
   loadEntities(): void {
+    this.entityService.getAll().subscribe((entities: Object[]) => {
+      this.entities = entities;
+    });
   }
 
   columns = [{ "name": "id", "header": "Id"},
