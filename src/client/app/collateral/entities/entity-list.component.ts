@@ -31,10 +31,16 @@ export class EntityListComponent  implements OnInit {
     });
   }
 
-  columns = [{ "name": "id", "header": "Id"},
+
+  
+  config = {
+  "columns": [{ "name": "id", "header": "Id"},
               { "name": "name", "header": "Name"},
               { "name": "country", "header": "Country"},
-              { "name": "city", "header": "City"}];
+              { "name": "city", "header": "City"}],
+  "link": "entities"              
+  }
+
 
 
 }

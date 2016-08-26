@@ -7,7 +7,7 @@ export class ContractsService {
 
   constructor(private http: Http) {}
 
-  query(): any {
+  getAll(): any {
    return this.http.get('app/data/contracts.json')
    .map((res: Response) => {
      return res.json();

@@ -16,7 +16,7 @@ import { LoadingContainer, LoadingPage } from '../index';
 export class GridComponent implements OnInit {
 
   @Input() loading: boolean;
-  @Input() columns: Object[];
+  @Input() config: {"column": Object[], "link": string};
   @Input() datas: Object[];
 
   constructor(private router: Router) {}

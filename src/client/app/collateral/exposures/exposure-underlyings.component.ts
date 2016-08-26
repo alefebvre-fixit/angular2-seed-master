@@ -35,10 +35,13 @@ export class ExposureUnderlyingsComponent implements OnInit {
       });
   }
 
-    columns = [{ "id": "name", "header": "Id"},
-              { "code": "ISIN", "header": "Code"},
-              { "name": "location", "header": "Name"},
-              { "description": "maturity", "header": "Description"},
-              { "exposureId": "last", "header": "Exposure Id"}];
+  config = {
+      "columns": [{ "name": "id", "header": "Id"},
+                { "name": "code", "header": "Code"},
+                { "name": "name", "header": "Name"},
+                { "name": "description", "header": "Description"},
+                { "name": "exposureId", "header": "Exposure Id"}]
+  }
+
 
 }

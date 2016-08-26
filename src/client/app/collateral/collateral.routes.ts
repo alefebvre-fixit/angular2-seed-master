@@ -7,6 +7,7 @@ import { ExposureDetailsComponent } from './index';
 import { CollateralComponent } from './index';
 import { InventoryComponent } from './index';
 import { EntityListComponent } from './index';
+import { EntityViewComponent } from './index';
 
 export const CollateralRoutes: RouterConfig = [
   {
@@ -27,20 +28,24 @@ export const CollateralRoutes: RouterConfig = [
         component: ExposuresComponent
       },
       {
-        path: 'contracts',
-        component: ContractsComponent
+        path: 'exposures/:id', 
+        component: ExposureDetailsComponent
       },
       {
-        path: 'counterparties',
-        component: EntityListComponent
+        path: 'contracts',
+        component: ContractsComponent
       },
       {
         path: 'inventory',
         component: InventoryComponent
       },
       {
-        path: 'exposures/:id', 
-        component: ExposureDetailsComponent
+        path: 'counterparties',
+        component: EntityListComponent
+      },
+      {
+        path: 'counterparties/:id', 
+        component: EntityViewComponent
       }
       ]
     },

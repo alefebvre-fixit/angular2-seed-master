@@ -13,8 +13,8 @@ import { ExposureCollateralsComponent } from './exposure-collaterals.component';
 
 @Component({
   moduleId: module.id,
-  templateUrl: 'exposure-details.component.html',
-  styleUrls: ['exposure-details.component.css'],
+  templateUrl: 'exposure-view.component.html',
+  styleUrls: ['exposure-view.component.css'],
   directives: [
     ROUTER_DIRECTIVES,TAB_DIRECTIVES,SectionComponent,ExposureSummaryComponent,ExposureUnderlyingsComponent,ExposureCollateralsComponent
   ],

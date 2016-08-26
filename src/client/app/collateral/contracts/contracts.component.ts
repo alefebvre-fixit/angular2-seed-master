@@ -24,15 +24,19 @@ export class ContractsComponent implements OnInit {
   }
 
   loadContracts(): void {
-    this.contractsService.query().subscribe((contracts: Object[]) => {
+    this.contractsService.getAll().subscribe((contracts: Object[]) => {
       this.contracts = contracts;
     });
   }
 
-  columns = [{ "name": "name", "header": "Name"},
+
+
+
+    config = {
+    "columns": [{ "name": "name", "header": "Name"},
               { "name": "description", "header": "Description"},
               { "name": "counterparty", "header": "Counterparty"},
               { "name": "startDate", "header": "Start Date"}];
-
+    }
 
 }

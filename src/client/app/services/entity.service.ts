@@ -27,4 +27,18 @@ export class EntityService {
    });
   }
 
+  getContacts(): any {
+   return this.http.get('app/data/contacts.json')
+   .map((res: Response) => {
+     return res.json();
+   });
+  }
+
+  getContract(): any {
+   return this.http.get('app/data/contracts.json')
+   .map((res: Response) => {
+     return res.json();
+   });
+  }
+
 }

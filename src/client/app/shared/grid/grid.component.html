@@ -33,15 +33,22 @@
                 <table class="table">
                     <thead>
                         <tr>
-                            <th *ngFor="let column of columns;">
+                            <th *ngFor="let column of config.columns;">
                                 <span>{{column.header}}</span>
+                            </th>
+                            <th class="text-right" *ngIf="config.link">
                             </th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr *ngFor="let data of datas;">
-                            <td *ngFor="let column of columns;">
+                            <td *ngFor="let column of config.columns;">
                                 {{data[column.name]}}
+                            </td>
+                            <td class="text-right" *ngIf="config.link">
+                                <a [routerLink]="[data.id]" class="btn btn-link" style="padding:0px 0px">
+                                    <span class="glyphicon glyphicon-zoom-in"></span>
+                                </a>
                             </td>
                         </tr>
                     </tbody>
