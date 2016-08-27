@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewContainerRef } from '@angular/core';
 import { ROUTER_DIRECTIVES } from '@angular/router';
 import { HTTP_PROVIDERS } from '@angular/http';
 import {AlertComponent} from 'ng2-bootstrap/ng2-bootstrap';
@@ -17,7 +17,11 @@ import { Config, NameListService, ToolbarComponent } from './shared/index';
   directives: [ROUTER_DIRECTIVES, ToolbarComponent]
 })
 export class AppComponent {
-  constructor() {
+  constructor(private viewContainerRef:ViewContainerRef) {
+    // You need this small hack in order to catch application root view container ref
+    this.viewContainerRef = viewContainerRef;
+
+
     console.log('Environment config', Config);
   }
 }

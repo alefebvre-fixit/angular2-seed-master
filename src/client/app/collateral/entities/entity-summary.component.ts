@@ -2,6 +2,7 @@ import { Component, OnInit, Input} from '@angular/core';
 import { Router, ROUTER_DIRECTIVES } from '@angular/router';
 import { EntityService } from '../../services/index';
 import { GridComponent} from '../../shared/index';
+import {MODAL_DIRECTIVES, BS_VIEW_PROVIDERS} from 'ng2-bootstrap/ng2-bootstrap';
 
 @Component({
   moduleId: module.id,
@@ -9,9 +10,9 @@ import { GridComponent} from '../../shared/index';
   templateUrl: 'entity-summary.component.html',
   styleUrls: ['entity-summary-component.css'],
   directives: [
-    ROUTER_DIRECTIVES, GridComponent
+    ROUTER_DIRECTIVES, MODAL_DIRECTIVES, GridComponent
   ],
-  viewProviders: [EntityService],
+  viewProviders: [BS_VIEW_PROVIDERS, EntityService],
 })
 
 export class EntitySummaryComponent implements OnInit {
