@@ -1,79 +1,115 @@
-<form class="form-horizontal" (ngSubmit)="onSubmit()" #contactForm="ngForm">
-<fieldset>
-    <legend>{{model.firstName}} {{model.lastName}}</legend>
-    <div class="form-group" [ngClass]="{'has-error': !firstName.valid}">
 
-        <label for="firstName" class="col-lg-2 control-label">First Name</label>
-        <div class="col-lg-10">
-            <input type="text"  class="form-control" id="firstName"
-                required
-                [(ngModel)]="model.firstName" name="firstName" placeholder="First Name" #firstName="ngModel">
-            <div [hidden]="firstName.valid || firstName.pristine" class="validation-block">
-                First Name is required
+
+
+<form class="form-horizontal" (ngSubmit)="submit()" #contactForm="ngForm">
+
+<table style="width:100%">
+    <tr>
+        <td width="25%" style="text-align: center; vertical-align: text-top;">
+            <div width="100%">
+                <img class="avatar" alt="Avatar"  src="assets/png/avatar.png" width="150px" height="150pxpx"> 
             </div>
-        </div>
-        </div>
-
-        <div class="form-group" [ngClass]="{'has-error': !lastName.valid}">
-        <label for="lastName" class="col-lg-2 control-label">Last Name</label>
-        <div class="col-lg-10">
-            <input type="text"  class="form-control" id="lastName"
-                required
-                [(ngModel)]="model.lastName" name="lastName" placeholder="Last Name"  #lastName="ngModel">
-            <div [hidden]="lastName.valid || lastName.pristine" class="validation-block">
-                Last Name is required
+            <br>
+            <div width="100%">
+                <h4>{{model.firstName}} {{model.lastName}}</h4>
             </div>
-        </div>
-        </div>
+        </td>
+        <td width="75%">
+            <div class="panel panel-default top-panel">
+                <div class="panel-body">
 
-        <div class="form-group" [ngClass]="{'has-error': !email.valid}">
-        <label for="email" class="col-lg-2 control-label">Email</label>
-        <div class="col-lg-10">
-            <input type="text"  class="form-control" id="email"
-                required
-                [(ngModel)]="model.email" name="email" placeholder="Email" #email="ngModel">
-            <div [hidden]="email.valid || email.pristine" class="validation-block">
-                Email is required
-            </div>                
-        </div>
-        </div>
+                    <fieldset>
+                        <legend>Contact</legend>
+                        <div class="form-group" [ngClass]="{'has-error': !firstName.valid}">
 
-        <div class="form-group" [ngClass]="{'has-error': !phone.valid}">
-        <label for="phone" class="col-lg-2 control-label">Phone Number</label>
-        <div class="col-lg-10">
-            <input type="text"  class="form-control" id="phone"
-                required
-                [(ngModel)]="model.phone" name="phone" placeholder="Phone Number" #phone="ngModel">
-            <div [hidden]="phone.valid || phone.pristine" class="validation-block">
-                Phone Number is required
-            </div>     
-        </div>
-        </div>
+                            <label for="firstName" class="col-lg-2 control-label">First Name</label>
+                            <div class="col-lg-10">
+                                <input type="text"  class="form-control" id="firstName"
+                                    required
+                                    [(ngModel)]="model.firstName" name="firstName" placeholder="First Name" #firstName="ngModel">
+                                <div [hidden]="firstName.valid || firstName.pristine" class="validation-block">
+                                    First Name is required
+                                </div>
+                            </div>
+                            </div>
 
-        <div class="form-group" [ngClass]="{'has-error': !role.valid}">
-        <label for="role" class="col-lg-2 control-label">Role</label>
-        <div class="col-lg-10">
-            <select class="form-control"  id="role"
-                    required
-                    [(ngModel)]="model.role" name="role" #role="ngModel">
-                <option *ngFor="let role of roles" [value]="role">{{role}}</option>
-            </select>
-            <div [hidden]="role.valid || role.pristine" class="validation-block">
-                Role is required
-            </div>  
-        </div>
-        </div>
+                            <div class="form-group" [ngClass]="{'has-error': !lastName.valid}">
+                            <label for="lastName" class="col-lg-2 control-label">Last Name</label>
+                            <div class="col-lg-10">
+                                <input type="text"  class="form-control" id="lastName"
+                                    required
+                                    [(ngModel)]="model.lastName" name="lastName" placeholder="Last Name"  #lastName="ngModel">
+                                <div [hidden]="lastName.valid || lastName.pristine" class="validation-block">
+                                    Last Name is required
+                                </div>
+                            </div>
+                            </div>
 
-        <div class="modal-footer">
-            <div class="form-group">
-            <div class="col-lg-10 col-lg-offset-2">
-                <button type="reset" class="btn btn-default">Cancel</button>
-                <button type="submit" class="btn btn-primary" [disabled]="!contactForm.form.valid">Submit</button>
+                            <div class="form-group" [ngClass]="{'has-error': !email.valid}">
+                            <label for="email" class="col-lg-2 control-label">Email</label>
+                            <div class="col-lg-10">
+                                <input type="text"  class="form-control" id="email"
+                                    required
+                                    [(ngModel)]="model.email" name="email" placeholder="Email" #email="ngModel">
+                                <div [hidden]="email.valid || email.pristine" class="validation-block">
+                                    Email is required
+                                </div>                
+                            </div>
+                            </div>
+
+                            <div class="form-group" [ngClass]="{'has-error': !phone.valid}">
+                            <label for="phone" class="col-lg-2 control-label">Phone Number</label>
+                            <div class="col-lg-10">
+                                <input type="text"  class="form-control" id="phone"
+                                    required
+                                    [(ngModel)]="model.phone" name="phone" placeholder="Phone Number" #phone="ngModel">
+                                <div [hidden]="phone.valid || phone.pristine" class="validation-block">
+                                    Phone Number is required
+                                </div>     
+                            </div>
+                            </div>
+
+                            <div class="form-group" [ngClass]="{'has-error': !role.valid}">
+                            <label for="role" class="col-lg-2 control-label">Role</label>
+                            <div class="col-lg-10">
+                                <select class="form-control"  id="role"
+                                        required
+                                        [(ngModel)]="model.role" name="role" #role="ngModel">
+                                    <option *ngFor="let role of roles" [value]="role">{{role}}</option>
+                                </select>
+                                <div [hidden]="role.valid || role.pristine" class="validation-block">
+                                    Role is required
+                                </div>  
+                            </div>
+                            </div>
+
+                            <div class="modal-footer">
+                                <div class="form-group">
+                                <div class="col-lg-10 col-lg-offset-2">
+                                    <button type="reset" class="btn btn-default">Cancel</button>
+                                    <button type="submit" class="btn btn-primary" [disabled]="!contactForm.form.valid">Submit</button>
+                                </div>
+                                </div>
+                            </div>
+
+                    </fieldset>                
+                
+                </div>
             </div>
-            </div>
-        </div>
 
-        {{model | json}}
 
-</fieldset>
+        </td>
+    </tr>
+</table>
+
+
+
+
+
+
+
+
+
+
+
 </form>

@@ -14,15 +14,28 @@
             <div bsModal #lgModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-lg">
                 <div class="modal-content">
+
                 <div class="modal-header">
-                    <button type="button" class="close" (click)="lgModal.hide()" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                    </button>
-                    <h5 class="modal-title">Large modal</h5>
+                    <table style="width:100%">
+                    <tr>
+                        <td style="text-align:left">
+                            <button type="button" class="btn btn-link btn-xlg" (click)="lgModal.hide()">
+                                <span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span>
+                            </button>
+                        </td>
+                        <td style="text-align:right">
+                            <button type="button" class="btn btn-link btn-xlg">
+                                <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                            </button>
+                        </td>
+                    </tr>
+                    </table>
                 </div>
+                 
                 <div class="modal-body">
-                    <contact-edit></contact-edit>
+                    <contact-edit (onSubmit)="lgModal.hide()" ></contact-edit>
                 </div>
+
                 </div>
             </div>
             </div>

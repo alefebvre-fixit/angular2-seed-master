@@ -29,7 +29,8 @@ export class EntitySummaryComponent implements OnInit {
   }
 
   loadContacts(): void {
-    this.entityService.getContacts().subscribe((contacts: Object[]) => {
+    this.entityService.contact$.subscribe((contacts: Object[]) => {
+      console.log("Event Received!!!!");
       this.contacts = contacts;
     });
   }

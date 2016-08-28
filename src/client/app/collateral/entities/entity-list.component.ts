@@ -9,7 +9,7 @@ import { EntityService } from '../../services/index';
   templateUrl: 'entity-list.component.html',
   styleUrls: ['entity-list.component.css'],
   directives: [
-    ROUTER_DIRECTIVES,DROPDOWN_DIRECTIVES,SectionComponent, GridComponent
+    ROUTER_DIRECTIVES,DROPDOWN_DIRECTIVES,SectionComponent,GridComponent
   ],
   viewProviders: [ EntityService ],
 })

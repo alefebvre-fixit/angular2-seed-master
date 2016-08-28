@@ -406,9 +406,9 @@ loading-indicator {
     background-color: white;
 }
 
-
-
-
-
-
-
+.btn-xlg {
+  padding: 0px 0px;
+  font-size: 22px;
+  line-height: 1.3333333;
+  border-radius: 3px;
+}
