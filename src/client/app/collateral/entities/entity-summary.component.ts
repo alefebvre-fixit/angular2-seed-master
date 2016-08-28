@@ -2,6 +2,8 @@ import { Component, OnInit, Input} from '@angular/core';
 import { Router, ROUTER_DIRECTIVES } from '@angular/router';
 import { EntityService } from '../../services/index';
 import { GridComponent} from '../../shared/index';
+import { ContactEditComponent} from './contact-edit.component';
+
 import {MODAL_DIRECTIVES, BS_VIEW_PROVIDERS} from 'ng2-bootstrap/ng2-bootstrap';
 
 @Component({
@@ -10,7 +12,7 @@ import {MODAL_DIRECTIVES, BS_VIEW_PROVIDERS} from 'ng2-bootstrap/ng2-bootstrap';
   templateUrl: 'entity-summary.component.html',
   styleUrls: ['entity-summary-component.css'],
   directives: [
-    ROUTER_DIRECTIVES, MODAL_DIRECTIVES, GridComponent
+    ROUTER_DIRECTIVES, MODAL_DIRECTIVES, GridComponent, ContactEditComponent
   ],
   viewProviders: [BS_VIEW_PROVIDERS, EntityService],
 })
@@ -33,9 +35,7 @@ export class EntitySummaryComponent implements OnInit {
   }
 
   add(): void {
-    
   }
-
 
   config = {
   "columns": [{ "name": "firstName", "header": "First Name"},

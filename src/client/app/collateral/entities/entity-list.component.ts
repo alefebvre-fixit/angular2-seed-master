@@ -4,7 +4,6 @@ import {DROPDOWN_DIRECTIVES} from 'ng2-bootstrap/ng2-bootstrap';
 import { SectionComponent, GridComponent} from '../../shared/index';
 import { EntityService } from '../../services/index';
 
-
 @Component({
   moduleId: module.id,
   templateUrl: 'entity-list.component.html',

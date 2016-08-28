@@ -8,8 +8,6 @@
 </div>
 
 
-
-
 <grid [datas]="contacts" [config]="config" [loading]="loading">
     <table-buttons>
             <button class="btn btn-primary" (click)="lgModal.show()">ADD</button>
@@ -20,10 +18,10 @@
                     <button type="button" class="close" (click)="lgModal.hide()" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                     </button>
-                    <h4 class="modal-title">Large modal</h4>
+                    <h5 class="modal-title">Large modal</h5>
                 </div>
                 <div class="modal-body">
-                    ...
+                    <contact-edit></contact-edit>
                 </div>
                 </div>
             </div>
