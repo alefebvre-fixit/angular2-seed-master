@@ -1,7 +1,7 @@
 
 
 
-<form class="form-horizontal" (ngSubmit)="submit()" #contactForm="ngForm">
+
 
 <table style="width:100%">
     <tr>
@@ -18,8 +18,9 @@
             <div class="panel panel-default top-panel">
                 <div class="panel-body">
 
+                    <form class="form-horizontal" (ngSubmit)="submit()" #contactForm="ngForm">
                     <fieldset>
-                        <legend>Contact</legend>
+                        <legend>Edit Contact</legend>
                         <div class="form-group" [ngClass]="{'has-error': !firstName.valid}">
 
                             <label for="firstName" class="col-lg-2 control-label">First Name</label>
@@ -93,7 +94,7 @@
                             </div>
 
                     </fieldset>                
-                
+                </form>
                 </div>
             </div>
 
@@ -112,4 +113,3 @@
 
 
 
-</form>

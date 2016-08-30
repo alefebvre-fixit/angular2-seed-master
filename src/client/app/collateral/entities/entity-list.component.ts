@@ -30,14 +30,20 @@ export class EntityListComponent  implements OnInit {
     });
   }
 
-
+  openEntity(): void {
+    console.log("openEntity callback");
+  }
   
   config = {
   "columns": [{ "name": "id", "header": "Id"},
               { "name": "name", "header": "Name"},
               { "name": "country", "header": "Country"},
               { "name": "city", "header": "City"}],
-  "link": "entities"              
+
+    link: function () {
+        console.log("openEntity callback");
+    },
+              
   }
 
 
