@@ -36,7 +36,7 @@
                             <th *ngFor="let column of config.columns;">
                                 <span>{{column.header}}</span>
                             </th>
-                            <th class="text-right" *ngIf="config.link">
+                            <th class="text-right" *ngIf="config.viewCallBack || config.editCallBack">
                             </th>
                         </tr>
                     </thead>
@@ -45,15 +45,13 @@
                             <td *ngFor="let column of config.columns;">
                                 {{data[column.name]}}
                             </td>
-                            <td class="text-right" *ngIf="config.link">
-
-                                <button type="button" class="btn btn-link" (click)="config.link()">
+                            <td class="text-right" *ngIf="config.viewCallBack || config.editCallBack">
+                                <button type="button" class="btn btn-link" (click)="config.editCallBack()" style="padding:0px 0px">
                                     <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
                                 </button>
-
-                                <a [routerLink]="[data.id]" class="btn btn-link" style="padding:0px 0px">
-                                    <span class="glyphicon glyphicon-zoom-in"></span>
-                                </a>
+                                <button type="button" class="btn btn-link" (click)="config.viewCallBack()" style="padding:0px 0px">
+                                    <span class="glyphicon glyphicon-zoom-in" aria-hidden="true"></span>
+                                </button>
                             </td>
                         </tr>
                     </tbody>
