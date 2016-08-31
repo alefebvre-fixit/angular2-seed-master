@@ -3,6 +3,7 @@ import { Router, ROUTER_DIRECTIVES } from '@angular/router';
 import { EntityService } from '../../services/index';
 import { GridComponent, GridConfiguration} from '../../shared/index';
 import { ContactEditComponent} from './contact-edit.component';
+import { ChildSinkComponent } from '../../sink/child-sink.component';
 
 import {MODAL_DIRECTIVES, BS_VIEW_PROVIDERS} from 'ng2-bootstrap/ng2-bootstrap';
 
@@ -12,15 +13,13 @@ import {MODAL_DIRECTIVES, BS_VIEW_PROVIDERS} from 'ng2-bootstrap/ng2-bootstrap';
   templateUrl: 'entity-summary.component.html',
   styleUrls: ['entity-summary-component.css'],
   directives: [
-    ROUTER_DIRECTIVES, MODAL_DIRECTIVES, GridComponent, ContactEditComponent
+    ROUTER_DIRECTIVES, MODAL_DIRECTIVES, GridComponent, ContactEditComponent,ChildSinkComponent
   ],
   viewProviders: [BS_VIEW_PROVIDERS, EntityService],
 })
 export class EntitySummaryComponent implements OnInit {
 
-  //@ViewChild('child') lgModal:any;
-  //@ViewChildren(GridComponent) grid:GridComponent;
-  @ViewChild('child') child: GridComponent;
+  @ViewChild('lgModal') lgModal:any;
 
   @Input() entity: Object = {};
   contacts: Object[];
@@ -36,7 +35,9 @@ export class EntitySummaryComponent implements OnInit {
               ]);
 
     this.config.viewCallBack = this.view;
-    this.config.link = this.view;
+    this.config.link = () => { // <-- note syntax here
+        this.view();
+    }
 
   }
 
@@ -54,10 +55,19 @@ export class EntitySummaryComponent implements OnInit {
   }
 
   view(): void {
-    console.log("openEntity callback");
-    console.log(this.child);
+    console.log(this.lgModal.show());
+    console.log(this);
+  }
 
-    //this.lgModal.show();
+
+  @ViewChild('child') child:ChildSinkComponent;
+
+
+  ngAfterViewInit() : void{
+    console.log("After Init");
+    console.log(this.child);
+    console.log(this);
+
   }
 
 }

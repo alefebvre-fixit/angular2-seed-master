@@ -38,8 +38,6 @@ export class EntityViewComponent implements OnInit {
 
 
   ngAfterViewInit() : void{
-    console.log("After Init");
-    console.log(this.child);
   }
 
 }

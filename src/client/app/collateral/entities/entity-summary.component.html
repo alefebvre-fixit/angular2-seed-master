@@ -7,8 +7,11 @@
     </div>
 </div>
 
+<child-sink #child></child-sink>
 
-<grid [datas]="contacts" [config]="config" [loading]="loading" #child>
+
+
+<grid [datas]="contacts" [config]="config" [loading]="loading" #grid>
     <table-buttons>
             <button class="btn btn-primary" (click)="lgModal.show()">ADD</button>
             <div bsModal #lgModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" #child>
