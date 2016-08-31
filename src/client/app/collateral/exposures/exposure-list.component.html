@@ -1,44 +1,6 @@
 <section [name]="'Exposures'"></section>
 
-
-  <div class="table-container">
-    <div class="panel panel-default">
-      <div class="panel-heading table-toolbar">
-        <div class="inner-addon left-addon">
-        <i class="glyphicon glyphicon-search"></i>
-        <input type="text" class="form-control search-toolbar" placeholder="Search" />
-    </div>
-
-      </div>
-      <div class="table-body">
-            <div class="table-responsive">
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th><span>ID</span></th>
-                            <th><span>Name</span></th>
-                            <th><span>Description</span></th>
-                            <th><span>Code</span></th>
-                            <th></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr *ngFor="let exposure of exposures ; trackBy:id;">
-                            <td>
-                                <a [routerLink]="[exposure.id]">{{exposure.id}}</a>
-                            </td>
-                            <td>{{exposure.name}}</td>
-                            <td>{{exposure.description}}</td>
-                            <td>{{exposure.code}}</td>
-                            <td class="text-right">
-                                    <a [routerLink]="[exposure.id]" class="btn btn-link">
-                                        <span class="glyphicon glyphicon-zoom-in"></span>
-                                    </a>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-      </div>
-    </div>
-  </div>
+<grid [datas]="exposures" [config]="config" [loading]="loading">
+        <table-buttons>
+        </table-buttons>
+</grid>

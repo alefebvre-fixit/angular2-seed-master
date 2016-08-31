@@ -7,14 +7,13 @@ import { EntitySummaryComponent } from './entity-summary.component';
 
 import { SectionComponent } from '../../shared/index';
 import { EntityService } from '../../services/index';
-import { ChildSinkComponent } from '../../sink/child-sink.component';
 
 @Component({
   moduleId: module.id,
   templateUrl: 'entity-view.component.html',
   styleUrls: ['entity-view.component.css'],
   directives: [
-    ROUTER_DIRECTIVES,TAB_DIRECTIVES,SectionComponent,EntitySummaryComponent,ChildSinkComponent
+    ROUTER_DIRECTIVES,TAB_DIRECTIVES,SectionComponent,EntitySummaryComponent
   ],
   viewProviders: [ EntityService ],
 })
@@ -33,9 +32,6 @@ export class EntityViewComponent implements OnInit {
           .subscribe(entity => this.entity = entity);
       });
   }
-
-  @ViewChild('child') child:ChildSinkComponent;
-
 
   ngAfterViewInit() : void{
   }

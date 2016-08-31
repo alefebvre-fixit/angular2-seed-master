@@ -1,7 +1,8 @@
-import { Component, OnInit, EventEmitter, Input, Output } from '@angular/core';
+import { Component, OnInit, EventEmitter, Input, Output, ViewChild } from '@angular/core';
 import { Router, ROUTER_DIRECTIVES } from '@angular/router';
 import { EntityService } from '../../services/index';
 import {Contact} from './contact';
+import {MODAL_DIRECTIVES, BS_VIEW_PROVIDERS} from 'ng2-bootstrap/ng2-bootstrap';
 
 @Component({
   moduleId: module.id,
@@ -9,15 +10,18 @@ import {Contact} from './contact';
   templateUrl: 'contact-edit.component.html',
   styleUrls: ['contact-edit-component.css'],
   directives: [
-    ROUTER_DIRECTIVES,
+    ROUTER_DIRECTIVES,MODAL_DIRECTIVES
   ],
-  viewProviders: [ ],
+  viewProviders: [ BS_VIEW_PROVIDERS ],
 })
 
 export class ContactEditComponent implements OnInit {
 
+  @ViewChild('modal') modal:any;
+
   @Output() onSubmit = new EventEmitter<boolean>();
   @Output() onCancel = new EventEmitter<boolean>();
+
 
   roles = ['Role-A', 'Role-B',
             'Role-C', 'Role-D'];
@@ -39,11 +43,21 @@ export class ContactEditComponent implements OnInit {
 
   cancel(){
     console.log("cancel");
-
   }
 
+  public create(){
+    this.modal.show();
+  }
 
+  public view(contact: Contact){
+    this.model = contact;
+    this.modal.show();
+  }
 
+  public edit(contact: Contact){
+    this.model = contact;
+    this.modal.show();
+  }
 
 
 }

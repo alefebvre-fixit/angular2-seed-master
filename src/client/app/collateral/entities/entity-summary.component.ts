@@ -3,8 +3,7 @@ import { Router, ROUTER_DIRECTIVES } from '@angular/router';
 import { EntityService } from '../../services/index';
 import { GridComponent, GridConfiguration} from '../../shared/index';
 import { ContactEditComponent} from './contact-edit.component';
-
-import {MODAL_DIRECTIVES, BS_VIEW_PROVIDERS} from 'ng2-bootstrap/ng2-bootstrap';
+import {Contact} from './contact';
 
 @Component({
   moduleId: module.id,
@@ -12,16 +11,17 @@ import {MODAL_DIRECTIVES, BS_VIEW_PROVIDERS} from 'ng2-bootstrap/ng2-bootstrap';
   templateUrl: 'entity-summary.component.html',
   styleUrls: ['entity-summary-component.css'],
   directives: [
-    ROUTER_DIRECTIVES, MODAL_DIRECTIVES, GridComponent, ContactEditComponent
+    ROUTER_DIRECTIVES, GridComponent, ContactEditComponent
   ],
-  viewProviders: [BS_VIEW_PROVIDERS, EntityService],
+  viewProviders: [EntityService],
 })
 export class EntitySummaryComponent implements OnInit {
 
-  @ViewChild('lgModal') lgModal:any;
-
+  @ViewChild('editor') editor:ContactEditComponent;
   @Input() entity: Object = {};
-  contacts: Object[];
+  
+  private contacts: Object[];
+  private config: GridConfiguration;
 
 
   constructor(private entityService: EntityService) {
@@ -33,13 +33,16 @@ export class EntitySummaryComponent implements OnInit {
               { "name": "phone", "header": "Phone"}
               ]);
 
-    this.config.viewCallBack = () => { // <-- note syntax here
-        this.view();
+    this.config.viewCallBack = (contact: any) => { 
+        this.view(contact);
+    }
+
+    this.config.editCallBack = (contact: any) => { // <-- note syntax here
+        this.edit(contact);
     }
 
   }
 
-  config: GridConfiguration;
 
   ngOnInit(): void {
     this.loadContacts();
@@ -47,14 +50,16 @@ export class EntitySummaryComponent implements OnInit {
 
   loadContacts(): void {
     this.entityService.contact$.subscribe((contacts: Object[]) => {
-      console.log("Event Received!!!!");
       this.contacts = contacts;
     });
   }
 
-  view(): void {
-    console.log(this.lgModal.show());
-    console.log(this);
+  view(contact: Contact): void {
+    this.editor.view(contact);
+  }
+
+  edit(contact: Contact): void {
+    this.editor.edit(contact);
   }
 
 }

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ROUTER_DIRECTIVES } from '@angular/router';
-import { SectionComponent } from '../../shared/index';
+import { SectionComponent, LoadingPage, GridComponent, GridConfiguration} from '../../shared/index';
 import { ExposuresService } from '../../services/index';
 
 @Component({
@@ -8,7 +8,7 @@ import { ExposuresService } from '../../services/index';
   templateUrl: 'exposure-list.component.html',
   styleUrls: ['exposure-list.component.css'],
   directives: [
-    ROUTER_DIRECTIVES,SectionComponent,
+    ROUTER_DIRECTIVES,SectionComponent,GridComponent
   ],
   viewProviders: [ ExposuresService ],
 })
@@ -16,14 +16,20 @@ export class ExposuresComponent implements OnInit {
 
   exposures: Object[];
 
-  constructor(private router: Router, private exposuresService: ExposuresService) {}
+  private config: GridConfiguration;
 
-  goBack(route: string): void {
-    this.router.navigate(['/']);
-  }
+  constructor(private router: Router, private exposuresService: ExposuresService) {
+  
+    this.config = new GridConfiguration(
+              [{ "name": "id", "header": "Id"},
+              { "name": "name", "header": "Name"},
+              { "name": "description", "header": "Description"},
+              { "name": "requiredMargin", "header": "Required Margin"},
+              { "name": "currency", "header": "Currency"}]);
 
-  userClick(id: string): void {
-    alert('clicked on exposure: ' + id);
+    this.config.viewCallBack = (entity: any) => { 
+        this.view(entity);
+    }
   }
 
   ngOnInit(): void {
@@ -35,4 +41,12 @@ export class ExposuresComponent implements OnInit {
       this.exposures = exposures;
     });
   }
+
+  view(exposure: any): void{
+    this.router.navigate(['/collateral/exposures', exposure.id]);
+  }
+
+
+
+
 }

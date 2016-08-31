@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ROUTER_DIRECTIVES } from '@angular/router';
 import {DROPDOWN_DIRECTIVES} from 'ng2-bootstrap/ng2-bootstrap';
-import { SectionComponent, GridComponent} from '../../shared/index';
+import { SectionComponent} from '../../shared/index';
 import { EntityService } from '../../services/index';
+import { GridComponent, GridConfiguration} from '../../shared/index';
 
 @Component({
   moduleId: module.id,
@@ -16,8 +17,19 @@ import { EntityService } from '../../services/index';
 export class EntityListComponent  implements OnInit {
 
   entities: Object[];
+  private config: GridConfiguration;
 
   constructor(private router: Router, private entityService: EntityService) {
+  
+    this.config = new GridConfiguration(
+              [{ "name": "id", "header": "Id"},
+              { "name": "name", "header": "Name"},
+              { "name": "country", "header": "Country"},
+              { "name": "city", "header": "City"}]);
+
+    this.config.viewCallBack = (entity: any) => { 
+        this.view(entity);
+    }
   }
 
   ngOnInit(): void {
@@ -30,22 +42,9 @@ export class EntityListComponent  implements OnInit {
     });
   }
 
-  openEntity(): void {
-    console.log("openEntity callback");
+  view(entity: any): void{
+    this.router.navigate(['/collateral/counterparties', entity.id]);
   }
   
-  config = {
-  "columns": [{ "name": "id", "header": "Id"},
-              { "name": "name", "header": "Name"},
-              { "name": "country", "header": "Country"},
-              { "name": "city", "header": "City"}],
-
-    link: function () {
-        console.log("openEntity callback");
-    },
-              
-  }
-
-
 
 }

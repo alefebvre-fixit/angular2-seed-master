@@ -23,3 +23,12 @@
         position: relative;
         top: 15px;
 }
+
+.modal-body{
+    background: #eceff1;
+}
+
+.modal-header{
+    background: #eceff1;
+    padding-bottom: 2px;
+}
