@@ -22,17 +22,16 @@ export class ContactEditComponent implements OnInit {
   @Output() onSubmit = new EventEmitter<boolean>();
   @Output() onCancel = new EventEmitter<boolean>();
 
-
   roles = ['Role-A', 'Role-B',
             'Role-C', 'Role-D'];
 
-  model = new Contact(0, 'John', 'Doe', 'johndoe@gmail.com', '+1 111 2222 3333', this.roles[2]);
+  private model = new Contact(0, null, 'Doe', 'johndoe@gmail.com', '+1 111 2222 3333', this.roles[2]);
+  mode = "edit";
 
   constructor(private entityService: EntityService) {
   }
 
   ngOnInit(): void {
-      this.model = new Contact(0, 'John', 'Doe', 'johndoe@gmail.com', '+1 111 2222 3333', this.roles[2]);
   }
 
   submit(): void {
@@ -41,20 +40,25 @@ export class ContactEditComponent implements OnInit {
     this.onSubmit.emit(true);
   }
 
+
   cancel(){
     console.log("cancel");
   }
 
   public create(){
+    this.mode="edit";
+    this.model = new Contact(0, null, 'Doe', 'johndoe@gmail.com', '+1 111 2222 3333', this.roles[2]);
     this.modal.show();
   }
 
   public view(contact: Contact){
+    this.mode="view";
     this.model = contact;
     this.modal.show();
   }
 
   public edit(contact: Contact){
+    this.mode="edit";
     this.model = contact;
     this.modal.show();
   }
