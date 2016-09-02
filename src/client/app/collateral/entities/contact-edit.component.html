@@ -45,8 +45,7 @@
                                     <form class="form-horizontal" (ngSubmit)="submit()" #contactForm="ngForm">
                                     <fieldset>
                                         <legend>Edit Contact</legend>
-                                        <div class="form-group" [ngClass]="{'has-error': !firstName.valid}">
-
+                                            <div class="form-group" [ngClass]="{'has-error': !(firstName.valid || firstName.pristine)}">
                                             <label for="firstName" class="col-lg-2 control-label">First Name</label>
                                             <div class="col-lg-10">
                                                 <input type="text"  class="form-control" id="firstName"
@@ -58,7 +57,7 @@
                                             </div>
                                             </div>
 
-                                            <div class="form-group" [ngClass]="{'has-error': !lastName.valid}">
+                                            <div class="form-group" [ngClass]="{'has-error': !(lastName.valid || lastName.pristine)}">
                                             <label for="lastName" class="col-lg-2 control-label">Last Name</label>
                                             <div class="col-lg-10">
                                                 <input type="text"  class="form-control" id="lastName"
@@ -70,7 +69,7 @@
                                             </div>
                                             </div>
 
-                                            <div class="form-group" [ngClass]="{'has-error': !email.valid}">
+                                            <div class="form-group" [ngClass]="{'has-error': !(email.valid || email.pristine)}">
                                             <label for="email" class="col-lg-2 control-label">Email</label>
                                             <div class="col-lg-10">
                                                 <input type="text"  class="form-control" id="email"
@@ -82,7 +81,7 @@
                                             </div>
                                             </div>
 
-                                            <div class="form-group" [ngClass]="{'has-error': !phone.valid}">
+                                            <div class="form-group" [ngClass]="{'has-error': !(phone.valid || phone.pristine)}">
                                             <label for="phone" class="col-lg-2 control-label">Phone Number</label>
                                             <div class="col-lg-10">
                                                 <input type="text"  class="form-control" id="phone"
@@ -94,7 +93,7 @@
                                             </div>
                                             </div>
 
-                                            <div class="form-group" [ngClass]="{'has-error': !role.valid}">
+                                            <div class="form-group" [ngClass]="{'has-error': !(role.valid || role.pristine)}">
                                             <label for="role" class="col-lg-2 control-label">Role</label>
                                             <div class="col-lg-10">
                                                 <select class="form-control"  id="role"
@@ -121,15 +120,31 @@
                                 </form>
                                 </div>
                                 <div *ngIf="mode=='view'">
-                                    <legend>Edit Contact</legend>
-
-                                        <ul class="list-group">
-                                        <li class="list-group-item">{{model.firstName}}</li>
-                                        <li class="list-group-item">{{model.lastName}}</li>
-                                        <li class="list-group-item">{{model.email}}</li>
-                                        <li class="list-group-item">{{model.phone}}</li>
-                                        <li class="list-group-item">{{model.role}}</li>
-                                        </ul>
+                                    <legend>View Contact</legend>
+                                    <table class="data-list">
+                                        <tbody>
+                                            <tr>
+                                                <th>First Name:</th>
+                                                <td>{{model.firstName}}</td>
+                                            </tr>
+                                            <tr>
+                                                <th>Last Name:</th>
+                                                <td>{{model.lastName}}</td>
+                                            </tr>
+                                            <tr>
+                                                <th>Email:</th>
+                                                <td>{{model.email}}</td>
+                                            </tr>
+                                            <tr>
+                                                <th>Phone:</th>
+                                                <td>{{model.phone}}</td>
+                                            </tr>
+                                            <tr>
+                                                <th>Role:</th>
+                                                <td>{{model.role}}</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
 
                                 </div>
 

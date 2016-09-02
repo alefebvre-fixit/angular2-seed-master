@@ -1,3 +1,34 @@
+.table-toolbar{
+    border-bottom: 1px solid ;
+    border-bottom-color: #dddddd;
+    color: #333333;
+    padding: 10px;
+    /*height: 58px;*/
+    vertical-align: middle;
+}
+
+.table-toolbar .btn-toolbar {
+  margin-top: 7px;
+}
+  
+.table-container{
+    padding:50px;
+    background-color: #eceff1;
+}
+
+.table tbody tr:hover {
+    text-decoration: none;
+    background-color: rgba(0,0,0,0.1);
+}
+
+.table thead tr {
+    text-decoration: none;
+    border-bottom-color: #dddddd;
+    background-color: #f5f5f5;
+    color: #333333;
+}
+
+
 .search-toolbar{
   box-shadow: none;
 }
@@ -21,4 +52,3 @@
 /* add padding  */
 .left-addon input  { padding-left:  30px; }
 .right-addon input { padding-right: 30px; }
-

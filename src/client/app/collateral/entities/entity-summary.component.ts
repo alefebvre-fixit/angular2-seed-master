@@ -5,6 +5,7 @@ import { GridComponent, GridConfiguration} from '../../shared/index';
 import { ContactEditComponent} from './contact-edit.component';
 import {Contact} from './contact';
 import {DROPDOWN_DIRECTIVES} from 'ng2-bootstrap/ng2-bootstrap';
+import * as _ from 'lodash'
 
 @Component({
   moduleId: module.id,
@@ -23,7 +24,9 @@ export class EntitySummaryComponent implements OnInit {
   
   private contacts: Object[];
   private config: GridConfiguration;
-
+  
+  //cloned entity for edition
+  private model: Object = {};
 
   constructor(private entityService: EntityService) {
 
@@ -61,6 +64,21 @@ export class EntitySummaryComponent implements OnInit {
 
   edit(contact: Contact): void {
     this.editor.edit(contact);
+  }
+
+  mode:string = 'view';
+
+  editEntity(entity:any): void {
+    this.mode = 'edit';
+    this.model = _.cloneDeep(entity);
+  }
+
+  viewEntity(entity:any): void {
+    this.mode = 'view';
+  }
+
+  cancel(): void {
+    this.mode = 'view';
   }
 
 }
