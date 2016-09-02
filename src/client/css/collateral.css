@@ -412,3 +412,34 @@ loading-indicator {
   line-height: 1.3333333;
   border-radius: 3px;
 }
+
+
+
+/* Pair Data Table */
+.data-list {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.data-list tr {
+  width: 30%;
+  padding: 10px 15px;
+  background-color: #ffffff;
+  color: #777777;
+  text-align: left;
+  border-bottom: 1px solid #dddddd;
+}
+
+.data-list th {
+  width: 30%;
+  padding: 10px 15px;
+  background-color: #ffffff;
+  color: #777777;
+  text-align: left;
+}
+
+.data-list td {
+  padding: 10px 15px;
+  background-color: #ffffff;
+  text-align: left;
+}

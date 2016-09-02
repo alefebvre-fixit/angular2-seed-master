@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router, ROUTER_DIRECTIVES } from '@angular/router';
-import { SectionComponent } from '../shared/index';
+import { SectionComponent } from '../../shared/index';
 import { ChildSinkComponent } from './child-sink.component';
 
 @Component({

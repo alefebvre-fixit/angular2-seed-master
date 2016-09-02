@@ -4,6 +4,7 @@ import { EntityService } from '../../services/index';
 import { GridComponent, GridConfiguration} from '../../shared/index';
 import { ContactEditComponent} from './contact-edit.component';
 import {Contact} from './contact';
+import {DROPDOWN_DIRECTIVES} from 'ng2-bootstrap/ng2-bootstrap';
 
 @Component({
   moduleId: module.id,
@@ -11,7 +12,7 @@ import {Contact} from './contact';
   templateUrl: 'entity-summary.component.html',
   styleUrls: ['entity-summary-component.css'],
   directives: [
-    ROUTER_DIRECTIVES, GridComponent, ContactEditComponent
+    ROUTER_DIRECTIVES,DROPDOWN_DIRECTIVES,GridComponent,ContactEditComponent
   ],
   viewProviders: [EntityService],
 })

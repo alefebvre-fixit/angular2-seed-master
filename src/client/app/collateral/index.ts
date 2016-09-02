@@ -9,6 +9,7 @@ export * from './collateral.component';
 export * from './inventory/inventory.component';
 export * from './entities/entity-list.component';
 export * from './entities/entity-view.component';
+export * from './sink/sink.component';
 
 export * from './collateral.routes';
 

@@ -8,6 +8,7 @@ import { CollateralComponent } from './index';
 import { InventoryComponent } from './index';
 import { EntityListComponent } from './index';
 import { EntityViewComponent } from './index';
+import { SinkComponent } from './index';
 
 export const CollateralRoutes: RouterConfig = [
   {
@@ -46,6 +47,12 @@ export const CollateralRoutes: RouterConfig = [
       {
         path: 'counterparties/:id', 
         component: EntityViewComponent
+      },
+      {
+        path: 'sink', 
+        component: SinkComponent,
+        children: [
+        ]
       }
       ]
     },

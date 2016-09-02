@@ -3,32 +3,27 @@
     border-bottom-color: #dddddd;
     color: #333333;
     padding: 10px;
+    /*height: 58px;*/
+    vertical-align: middle;
 }
+
+.table-toolbar .btn-toolbar {
+  margin-top: 7px;
+}
+  
 
 .table-container{
     padding:50px;
     background-color: #eceff1;
 }
 
-.table td,
-  .table th {
-    background-color: #fff !important;
-    vertical-align:middle;
-  }
 
-.table tr:hover {
+table tbody tr:hover {
     text-decoration: none;
     color: #3390fb;
-    background: #3390fb;
+    background-color: rgba(0,0,0,0.1);
 }
 
-  .table th {
-    background-color: #f5f5f5 !important;
-    vertical-align:middle;
-    color: #333333;
-    border-bottom: 1px solid ;
-    border-bottom-color: #dddddd;
-  }
 
 .search-toolbar{
   box-shadow: none;

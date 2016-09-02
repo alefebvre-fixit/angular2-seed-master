@@ -4,7 +4,6 @@ import { AboutRoutes } from './+about/index';
 import { HomeRoutes } from './+home/index';
 import { CollateralRoutes } from './collateral/index';
 import { AccountRoutes } from './account/index';
-import { SinkRoutes } from './sink/index';
 
 const routes: RouterConfig = [
         
@@ -12,7 +11,6 @@ const routes: RouterConfig = [
   ...AboutRoutes,
   ...CollateralRoutes,
   ...AccountRoutes,
-  ...SinkRoutes,
 
   {
         path: '',
