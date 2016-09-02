@@ -7,6 +7,25 @@
     position: relative; 
 }
 
+.inner-addon.left-addon {
+    float: left;
+    width: 50%;
+}
+
+.inner-addon.right-addon {
+    float: right;
+    margin-top: 5px;
+}
+
+.search-toolbar {
+  height: 65px;
+}
+
+.form-control.search-toolbar {
+  margin-top: -10px;
+  height: 55px;
+}
+
 /* style icon */
 .inner-addon .glyphicon {
   position: absolute;
