@@ -1,59 +1,64 @@
 <div class="table-container">
     <div class="panel panel-default">
-        <div class="panel-heading table-toolbar search-toolbar">
-            <div class="inner-addon left-addon">
-                <i class="glyphicon glyphicon-search"></i>
-                <input type="text" class="form-control search-toolbar" placeholder="Search" />
-            </div>
-
-            <div class="inner-addon right-addon">
-                <ng-content select="table-buttons"></ng-content>
-                <div class="btn-group" dropdown>
-                    <button id="single-button" type="button" class="btn btn-link" dropdownToggle>
+        <div class="panel-heading table-toolbar">
+            <table style="width:100%">
+                <tr>
+                    <td width="50%">
+                        <div class="inner-addon left-addon">
+                            <i class="glyphicon glyphicon-search"></i>
+                            <input type="text" class="form-control search-toolbar" placeholder="Search" />
+                        </div>
+                    </td>
+                    <td width="50%" style="text-align:right;">
+                        <ng-content select="table-buttons"></ng-content>
+                        <div class="btn-group" dropdown>
+                            <button id="single-button" type="button" class="btn btn-link" dropdownToggle>
                                 <i class="fa fa-ellipsis-v"></i>
                                 </button>
-                    <ul dropdownMenu role="menu" aria-labelledby="single-button" class="dropdown-menu-right">
-                        <li role="menuitem"><a class="dropdown-item" href="#">Export csv</a></li>
-                        <li role="menuitem"><a class="dropdown-item" href="#">Export Json</a></li>
-                        <li class="divider dropdown-divider"></li>
-                        <li role="menuitem"><a class="dropdown-item" href="#">Configure</a></li>
-                    </ul>
-                </div>
-            </div>
+                                <ul dropdownMenu role="menu" aria-labelledby="single-button" class="dropdown-menu-right">
+                                <li role="menuitem"><a class="dropdown-item" href="#">Export csv</a></li>
+                                <li role="menuitem"><a class="dropdown-item" href="#">Export Json</a></li>
+                                <li class="divider dropdown-divider"></li>
+                                <li role="menuitem"><a class="dropdown-item" href="#">Configure</a></li>
+                                </ul>
+                        </div>
+                    </td>
+                </tr>
+            </table>
         </div>
-        <div>
-            <loading-container [loading]="loading">
-                <div class="table-body">
-                    <div class="table-responsive">
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th *ngFor="let column of config.columns;">
-                                        <span>{{column.header}}</span>
-                                    </th>
-                                    <th class="text-right" *ngIf="config.viewCallBack || config.editCallBack">
-                                    </th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr *ngFor="let data of datas;">
-                                    <td *ngFor="let column of config.columns;">
-                                        {{data[column.name]}}
-                                    </td>
-                                    <td class="text-right" *ngIf="config.viewCallBack || config.editCallBack">
-                                        <button type="button" class="btn btn-link" (click)="config.editCallBack(data)" style="padding:0px 0px" *ngIf="config.editCallBack">
+    <div>
+    <loading-container [loading]="loading">
+        <div class="table-body">
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th *ngFor="let column of config.columns;">
+                                <span>{{column.header}}</span>
+                            </th>
+                            <th class="text-right" *ngIf="config.viewCallBack || config.editCallBack">
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let data of datas;">
+                            <td *ngFor="let column of config.columns;">
+                                {{data[column.name]}}
+                            </td>
+                            <td class="text-right" *ngIf="config.viewCallBack || config.editCallBack">
+                                <button type="button" class="btn btn-link" (click)="config.editCallBack(data)" style="padding:0px 0px" *ngIf="config.editCallBack">
                                     <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
                                 </button>
-                                        <button type="button" class="btn btn-link" (click)="config.viewCallBack(data)" style="padding:0px 0px" *ngIf="config.viewCallBack">
+                                <button type="button" class="btn btn-link" (click)="config.viewCallBack(data)" style="padding:0px 0px" *ngIf="config.viewCallBack">
                                     <span class="glyphicon glyphicon-zoom-in" aria-hidden="true"></span>
                                 </button>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </loading-container>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </loading-container>
 
         </div>
     </div>
