@@ -9,6 +9,7 @@ import { ExposuresService } from '../../services/index';
 import { ExposureSummaryComponent } from './exposure-summary.component';
 import { ExposureUnderlyingsComponent } from './exposure-underlyings.component';
 import { ExposureCollateralsComponent } from './exposure-collaterals.component';
+import { ExposureAllocationsComponent } from './exposure-allocations.component';
 
 
 @Component({
@@ -16,7 +17,7 @@ import { ExposureCollateralsComponent } from './exposure-collaterals.component';
   templateUrl: 'exposure-view.component.html',
   styleUrls: ['exposure-view.component.css'],
   directives: [
-    ROUTER_DIRECTIVES,TAB_DIRECTIVES,SectionComponent,ExposureSummaryComponent,ExposureUnderlyingsComponent,ExposureCollateralsComponent
+    ROUTER_DIRECTIVES,TAB_DIRECTIVES,SectionComponent,ExposureSummaryComponent,ExposureUnderlyingsComponent,ExposureCollateralsComponent,ExposureAllocationsComponent
   ],
   viewProviders: [ ExposuresService ],
 })

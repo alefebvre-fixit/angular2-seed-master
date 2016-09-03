@@ -28,9 +28,13 @@
     color: #333333;
 }
 
-
 .search-toolbar{
   box-shadow: none;
+}
+
+.grid-link{
+    color: #333333;
+    text-decoration: none !important;
 }
 
 /* enable absolute positioning */
