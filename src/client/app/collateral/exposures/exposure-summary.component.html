@@ -1,87 +1,76 @@
 <div class="tab-body">
     <div class="panel panel-default">
         <div class="panel-heading">
-        <h3 class="panel-title">Summary</h3>
+            <h3 class="panel-title">Summary</h3>
         </div>
         <div class="panel-body">
-        This is a summary23
+            This is a summary23
         </div>
     </div>
 
     <div class="figures">
-            <table>
-                <tbody>
+        <table>
+            <tbody>
                 <tr>
                     <td>
-                        {{exposure.netBalance}}
+                        <figure [value]="exposure.netBalance"></figure>
                         <div class="grey">Net Balance</div>
                     </td>
                     <td>
-                        {{exposure.cashPosition}}
+                        <figure [value]="exposure.cashPosition"></figure>
                         <div class="grey">Cash Position</div>
                     </td>
                     <td>
-                        {{exposure.securityPosition}}
-                        <div class="grey">Security Position</div>	
+                        <figure [value]="exposure.securityPosition"></figure>
+                        <div class="grey">Security Position</div>
                     </td>
                     <td>
-                        {{exposure.requiredMargin}}
+                        <figure [value]="exposure.requiredMargin"></figure>
                         <div class="grey">Required Margin</div>
                     </td>
                 </tr>
-                </tbody>
-            </table>
+            </tbody>
+        </table>
     </div>
 
-<br>
+    <br>
 
-<div class="row">
-  <div class="col-md-4">
-  	  <div class="panel panel-default">
-        <div class="panel-heading">
-            <h3 class="panel-title">Threshold</h3>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Threshold</h3>
+                </div>
+                <div class="panel-body">
+                    Threshold Details
+                </div>
+            </div>
         </div>
-        <div class="panel-body">
-        Threshold Details
+        <div class="col-md-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Rounding</h3>
+                </div>
+                <div class="panel-body">
+                    Rounding details
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-header">
+                    <div [ngClass]="{'figure-positive': exposure.mta.value> 0}" class="figure-positive">
+                        <h3>MTA</h3>
+                    </div>
+                    <figure [value]="-exposure.mta.value"></figure>
+                    {{'USD'}}
+                </div>
+                <div class="card-body">
+                    {{exposure.mta | json}}
+                </div>
+            </div>
+
         </div>
     </div>
-  </div>
-  <div class="col-md-4">
-  	  <div class="panel panel-default">
-      <div class="panel-heading">
-        <h3 class="panel-title">Rounding</h3>
-      </div>
-      <div class="panel-body">
-      Rounding details
-      </div>
-    </div>
-  </div>
-    <div class="col-md-4">
-  	  <div class="panel panel-default">
-      <div class="panel-heading">
-        <h3 class="panel-title">MTA</h3>
-      </div>
-      <div class="panel-body">
-      MTA details {{exposure.mta.rating | json}}
-      </div>
-    </div>
-  </div>
+
 </div>
-
-</div>    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

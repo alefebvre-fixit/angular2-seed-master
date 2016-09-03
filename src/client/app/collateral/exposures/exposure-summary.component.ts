@@ -1,5 +1,6 @@
 import { Component, OnInit, Input} from '@angular/core';
 import { Router, ROUTER_DIRECTIVES } from '@angular/router';
+import { FigureComponent} from '../../shared/index';
 
 @Component({
   moduleId: module.id,
@@ -7,7 +8,7 @@ import { Router, ROUTER_DIRECTIVES } from '@angular/router';
   templateUrl: 'exposure-summary.component.html',
   styleUrls: ['exposure-summary.component.css'],
   directives: [
-    ROUTER_DIRECTIVES
+    ROUTER_DIRECTIVES, FigureComponent
   ],
   viewProviders: [],
 })
