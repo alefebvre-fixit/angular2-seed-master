@@ -443,3 +443,13 @@ loading-indicator {
   background-color: #ffffff;
   text-align: left;
 }
+
+.highlight {
+    display: inline;
+    background: #3390fb;
+    color: #ffffff; 
+    padding: 8px;
+    font-size: 20px;
+    line-height: 0.25em + 1em;
+    text-transform: uppercase;
+}

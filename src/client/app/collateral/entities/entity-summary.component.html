@@ -18,7 +18,10 @@
                 </div>
             </div>
         </div>
-        <h5>{{entity.name}}</h5>
+
+        <h5 *ngIf="mode=='view'">{{entity.name}}</h5>
+        <h5 *ngIf="mode=='edit'">Edit Counterparty</h5>
+
     </div>
     <div class="panel-body">
 
@@ -45,88 +48,72 @@
             </table>
         </div>
         <div *ngIf="mode=='edit'">
-            
-                <form class="form-horizontal" (ngSubmit)="submit()" #contactForm="ngForm">
+
+            <form class="form-horizontal" (ngSubmit)="submit()" #contactForm="ngForm">
                 <fieldset>
-                    <legend>Edit Counterparty</legend>
-                        <div class="form-group" [ngClass]="{'has-error': !(name.valid || name.pristine)}">
+                    <div class="form-group" [ngClass]="{'has-error': !(name.valid || name.pristine)}">
                         <label for="name" class="col-lg-2 control-label">Name</label>
                         <div class="col-lg-10">
-                            <input type="text"  class="form-control" id="name"
-                                required
-                                [(ngModel)]="model.name" name="name" placeholder="Name" #name="ngModel">
+                            <input type="text" class="form-control" id="name" required [(ngModel)]="model.name" name="name" placeholder="Name" #name="ngModel">
                             <div [hidden]="name.valid || name.pristine" class="validation-block">
                                 Name is required
                             </div>
                         </div>
-                        </div>
+                    </div>
 
-                        <div class="form-group" [ngClass]="{'has-error': !(streetAddress.valid || streetAddress.pristine)}">
+                    <div class="form-group" [ngClass]="{'has-error': !(streetAddress.valid || streetAddress.pristine)}">
                         <label for="streetAddress" class="col-lg-2 control-label">Address</label>
                         <div class="col-lg-10">
-                            <input type="text"  class="form-control" id="streetAddress"
-                                required
-                                [(ngModel)]="model.streetAddress" name="streetAddress" placeholder="Address"  #streetAddress="ngModel">
+                            <input type="text" class="form-control" id="streetAddress" required [(ngModel)]="model.streetAddress" name="streetAddress"
+                                placeholder="Address" #streetAddress="ngModel">
                             <div [hidden]="streetAddress.valid || streetAddress.pristine" class="validation-block">
                                 Address is required
                             </div>
                         </div>
-                        </div>
+                    </div>
 
-                        <div class="form-group" [ngClass]="{'has-error': !(city.valid || city.pristine)}">
+                    <div class="form-group" [ngClass]="{'has-error': !(city.valid || city.pristine)}">
                         <label for="city" class="col-lg-2 control-label">City</label>
                         <div class="col-lg-10">
-                            <input type="text"  class="form-control" id="city"
-                                required
-                                [(ngModel)]="model.city" name="city" placeholder="city" #city="ngModel">
+                            <input type="text" class="form-control" id="city" required [(ngModel)]="model.city" name="city" placeholder="city" #city="ngModel">
                             <div [hidden]="city.valid || city.pristine" class="validation-block">
                                 City is required
-                            </div>                
+                            </div>
                         </div>
-                        </div>
+                    </div>
 
-                        <div class="form-group" [ngClass]="{'has-error': !(country.valid || country.pristine)}">
+                    <div class="form-group" [ngClass]="{'has-error': !(country.valid || country.pristine)}">
                         <label for="country" class="col-lg-2 control-label">City</label>
                         <div class="col-lg-10">
-                            <input type="text"  class="form-control" id="country"
-                                required
-                                [(ngModel)]="model.country" name="country" placeholder="country" #country="ngModel">
+                            <input type="text" class="form-control" id="country" required [(ngModel)]="model.country" name="country" placeholder="country"
+                                #country="ngModel">
                             <div [hidden]="country.valid || country.pristine" class="validation-block">
                                 Country is required
-                            </div>                
+                            </div>
                         </div>
-                        </div>
+                    </div>
 
-                        <div class="form-group" [ngClass]="{'has-error': !(comment.valid || comment.pristine)}">
+                    <div class="form-group" [ngClass]="{'has-error': !(comment.valid || comment.pristine)}">
                         <label for="comment" class="col-lg-2 control-label">Comment</label>
                         <div class="col-lg-10">
-                            <input type="text"  class="form-control" id="comment"
-                                [(ngModel)]="model.comment" name="comment" placeholder="Comment" #comment="ngModel">
+                            <input type="text" class="form-control" id="comment" [(ngModel)]="model.comment" name="comment" placeholder="Comment" #comment="ngModel">
                             <div [hidden]="comment.valid || comment.pristine" class="validation-block">
                                 Comment is required
-                            </div>     
+                            </div>
                         </div>
-                        </div>
+                    </div>
 
-                        <div class="modal-footer">
-                            <div class="form-group">
+                    <div class="modal-footer">
+                        <div class="form-group">
                             <div class="col-lg-10 col-lg-offset-2">
                                 <button type="button" class="btn btn-default" (click)="cancel()">Cancel</button>
                                 <button type="submit" class="btn btn-primary" [disabled]="!contactForm.form.valid">Submit</button>
                             </div>
-                            </div>
                         </div>
+                    </div>
 
-                </fieldset>                
+                </fieldset>
             </form>
-
-
-
-
-
-
-
-
 
         </div>
     </div>

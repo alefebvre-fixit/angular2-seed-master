@@ -29,14 +29,11 @@ export class ContractsComponent implements OnInit {
     });
   }
 
-
-
-
     config = {
     "columns": [{ "name": "name", "header": "Name"},
               { "name": "description", "header": "Description"},
               { "name": "counterparty", "header": "Counterparty"},
-              { "name": "startDate", "header": "Start Date"}];
+              { "name": "startDate", "header": "Start Date"}]
     }
 
 }
