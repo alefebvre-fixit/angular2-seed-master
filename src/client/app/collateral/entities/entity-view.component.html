@@ -8,7 +8,10 @@
       </div>
     </tab>
     <tab heading="CONTRACTS">
-      
+      <grid [datas]="contracts" [config]="config" [loading]="loading">
+              <table-buttons>
+              </table-buttons>
+      </grid>
     </tab>
   </tabset>
   </div>
