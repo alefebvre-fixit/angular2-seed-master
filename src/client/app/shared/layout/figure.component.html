@@ -1,1 +1,8 @@
-<div [ngClass]="{'figure-positive': value> 0, 'figure-negative': value < 0, 'figure-negative': value < 0, 'figure-neutral': value == 0}" >{{value}}</div>
+<div>
+    <span [ngClass]="{'figure-positive': value> 0, 'figure-negative': value < 0, 'figure-negative': value < 0, 'figure-neutral': value == 0}" >
+    {{value}}
+    </span>
+    <span class="figure-neutral">
+    {{currency}}
+    </span>
+</div>

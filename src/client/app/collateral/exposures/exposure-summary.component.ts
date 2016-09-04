@@ -1,6 +1,7 @@
 import { Component, OnInit, Input} from '@angular/core';
 import { Router, ROUTER_DIRECTIVES } from '@angular/router';
 import { FigureComponent} from '../../shared/index';
+import { MTACard, ThresholdCard, RoundingCard} from './cards/index';
 
 @Component({
   moduleId: module.id,
@@ -8,7 +9,7 @@ import { FigureComponent} from '../../shared/index';
   templateUrl: 'exposure-summary.component.html',
   styleUrls: ['exposure-summary.component.css'],
   directives: [
-    ROUTER_DIRECTIVES, FigureComponent
+    ROUTER_DIRECTIVES, FigureComponent, MTACard, ThresholdCard, RoundingCard
   ],
   viewProviders: [],
 })

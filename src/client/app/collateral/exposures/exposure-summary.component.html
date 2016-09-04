@@ -37,39 +37,13 @@
 
     <div class="row">
         <div class="col-md-4">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h3 class="panel-title">Threshold</h3>
-                </div>
-                <div class="panel-body">
-                    Threshold Details
-                </div>
-            </div>
+            <threshold-card [threshold]="exposure.threshold"></threshold-card> 
         </div>
         <div class="col-md-4">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h3 class="panel-title">Rounding</h3>
-                </div>
-                <div class="panel-body">
-                    Rounding details
-                </div>
-            </div>
+            <rounding-card [rounding]="exposure.rounding"></rounding-card> 
         </div>
         <div class="col-md-4">
-            <div class="card">
-                <div class="card-header">
-                    <div [ngClass]="{'figure-positive': exposure.mta.value> 0}" class="figure-positive">
-                        <h3>MTA</h3>
-                    </div>
-                    <figure [value]="-exposure.mta.value"></figure>
-                    {{'USD'}}
-                </div>
-                <div class="card-body">
-                    {{exposure.mta | json}}
-                </div>
-            </div>
-
+            <mta-card [mta]="exposure.mta"></mta-card> 
         </div>
     </div>
 

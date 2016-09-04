@@ -13,6 +13,7 @@ import { Router, ROUTER_DIRECTIVES } from '@angular/router';
 export class FigureComponent implements OnInit {
 
   @Input() value: number = 0;
+  @Input() currency: string;
 
   constructor() {}
 

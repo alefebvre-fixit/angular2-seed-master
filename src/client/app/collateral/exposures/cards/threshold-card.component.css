@@ -1,0 +1,10 @@
+
+.card-header {
+    border-bottom-style: solid ;
+    border-bottom: 1px solid #dddddd;
+    color: #333333;
+}
+
+.card-body {
+    color: #333333;
+}
