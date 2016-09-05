@@ -121,7 +121,7 @@
     </div>
 </div>
 
-<grid [datas]="contacts" [config]="config" [loading]="loading">
+<grid [datas]="contacts" [config]="config" [loading]="loading" (view)="view($event)" (edit)="edit($event)">
     <table-buttons>
         <button class="btn btn-primary" (click)="editor.create()">ADD</button>
         <contact-edit #editor></contact-edit>

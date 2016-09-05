@@ -27,9 +27,8 @@ export class ExposuresComponent implements OnInit {
               { "name": "requiredMargin", "header": "Required Margin"},
               { "name": "currency", "header": "Currency"}]);
 
-    this.config.viewCallBack = (entity: any) => { 
-        this.view(entity);
-    }
+    this.config.view = true;
+    this.config.edit = false;
   }
 
   ngOnInit(): void {

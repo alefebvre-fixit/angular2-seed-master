@@ -24,8 +24,6 @@ export class ChildSinkComponent implements OnInit {
                       {"name" : 'Contracts', "value" : 22, "currency" : undefined, "history": undefined}, 
                       {"name" : 'Contacts', "value" : 10, "currency" : undefined, "history": undefined}
                       ];
-
-
   }
 
   ngOnInit(): void {

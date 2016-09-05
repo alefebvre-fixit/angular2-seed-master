@@ -1,6 +1,6 @@
 <section [name]="'Counterparties'"></section>
 
-<grid [datas]="entities" [config]="config" [loading]="loading">
+<grid [datas]="entities" [config]="config" [loading]="loading" (view)="view($event)">
         <table-buttons>
         </table-buttons>
 </grid>

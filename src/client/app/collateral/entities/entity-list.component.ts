@@ -27,9 +27,9 @@ export class EntityListComponent  implements OnInit {
               { "name": "country", "header": "Country"},
               { "name": "city", "header": "City"}]);
 
-    this.config.viewCallBack = (entity: any) => { 
-        this.view(entity);
-    }
+    this.config.view = true;
+    this.config.edit = false;
+    
   }
 
   ngOnInit(): void {

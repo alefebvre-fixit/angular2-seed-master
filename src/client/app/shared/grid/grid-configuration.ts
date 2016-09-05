@@ -3,10 +3,8 @@ export class GridConfiguration{
     
   constructor(public columns:ColumnConfiguration[]){}
 
-  viewCallBack: Function;
-  editCallBack: Function;
-  //TODO remove link
-  link: Function;
+  edit: boolean = false;
+  view: boolean = true;
 
 }
 

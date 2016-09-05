@@ -45,22 +45,15 @@ export class EntitySummaryComponent implements OnInit {
               { "name": "phone", "header": "Phone"}
               ]);
 
-    this.config.viewCallBack = (contact: any) => { 
-        this.view(contact);
-    }
-
-    this.config.editCallBack = (contact: any) => { // <-- note syntax here
-        this.edit(contact);
-    }
+    this.config.edit = true;
+    this.config.edit = true;
 
     this.statistics = [ {"name" : 'Total Exposure', "value" : -260000, "currency" : 'usd', "history": undefined}, 
                       {"name" : 'Trades', "value" : 243, "currency" : undefined, "history": undefined}, 
                       {"name" : 'Contracts', "value" : 22, "currency" : undefined, "history": undefined}, 
                       {"name" : 'Contacts', "value" : 10, "currency" : undefined, "history": undefined}
                       ];
-
   }
-
 
   ngOnInit(): void {
     this.loadContacts();
