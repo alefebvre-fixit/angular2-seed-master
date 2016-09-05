@@ -32,6 +32,7 @@ export class EntitySummaryComponent implements OnInit {
   private statistics: Statistic[];
 
 
+
   //cloned entity for edition
   private model: Object = {};
 

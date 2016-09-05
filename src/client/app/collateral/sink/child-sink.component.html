@@ -1,9 +1,20 @@
 
 This is a Child-Sink component
 
+<br>
+<br>
+
+<button type="button" class="btn btn-primary" (click)="addStatistic()">ADD</button>
+<button type="button" class="btn btn-success" (click)="modifyStatistic()">MODIFY</button>
+<button type="button" class="btn btn-default" (click)="resetStatistic()">RESET STATS</button>
+
+<br>
+<br>
+Increment: {{increment}}
+<br>
 
 
-
+<statistics [datas]="statistics"></statistics>
 
 
 
