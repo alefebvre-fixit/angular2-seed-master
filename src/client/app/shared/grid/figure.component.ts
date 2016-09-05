@@ -1,8 +1,9 @@
 import { Component, OnInit, Input} from '@angular/core';
-import { Router, ROUTER_DIRECTIVES } from '@angular/router';
+import {RemoveUndefined} from "../pipes/index"
 
 @Component({
   moduleId: module.id,
+  pipes: [RemoveUndefined],
   selector: "figure",
   templateUrl: 'figure.component.html',
   styleUrls: ['figure.component.css'],

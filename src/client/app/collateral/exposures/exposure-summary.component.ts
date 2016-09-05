@@ -1,6 +1,5 @@
 import { Component, OnInit, Input} from '@angular/core';
-import { Router, ROUTER_DIRECTIVES } from '@angular/router';
-import { FigureComponent} from '../../shared/index';
+import { FigureComponent, Statistics, Statistic} from '../../shared/index';
 import { MTACard, ThresholdCard, RoundingCard} from './cards/index';
 
 @Component({
@@ -9,7 +8,7 @@ import { MTACard, ThresholdCard, RoundingCard} from './cards/index';
   templateUrl: 'exposure-summary.component.html',
   styleUrls: ['exposure-summary.component.css'],
   directives: [
-    ROUTER_DIRECTIVES, FigureComponent, MTACard, ThresholdCard, RoundingCard
+    FigureComponent, MTACard, ThresholdCard, RoundingCard, Statistics
   ],
   viewProviders: [],
 })
@@ -17,8 +16,18 @@ import { MTACard, ThresholdCard, RoundingCard} from './cards/index';
 export class ExposureSummaryComponent implements OnInit {
 
   @Input() exposure: Object;
+  private statistics: Statistic[];
 
-  constructor(private router: Router) {}
+  constructor() {
+
+    this.statistics = [ {"name" : 'Net Balance', "value" : undefined, "currency" : undefined, "history": undefined}, 
+                      {"name" : 'Cash Position', "value" : 12, "currency" : undefined, "history": undefined}, 
+                      {"name" : 'Security Position', "value" : 12, "currency" : undefined, "history": undefined}, 
+                      {"name" : 'Required Margin', "value" : 12, "currency" : undefined, "history": undefined}
+                      ];
+
+
+  }
 
   ngOnInit(): void {
     this.exposure = {"mta":{}};

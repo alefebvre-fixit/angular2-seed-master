@@ -9,6 +9,11 @@
 }
 
 .figure-neutral {
-  color: #717171;
+  color: #666666;
   text-decoration: none;
+}
+
+.figure-currency{
+  text-transform: uppercase;
+  color: #999999;
 }

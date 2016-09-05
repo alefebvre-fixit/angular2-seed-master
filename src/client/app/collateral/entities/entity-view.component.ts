@@ -38,7 +38,6 @@ export class EntityViewComponent implements OnInit {
   ngAfterViewInit(): void {
   }
 
-
   loadContracts(): void {
     this.contractsService.getAll().subscribe((contracts: Object[]) => {
       this.contracts = contracts;

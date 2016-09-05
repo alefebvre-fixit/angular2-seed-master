@@ -1,0 +1,12 @@
+<div class="figures">
+    <table>
+        <tbody>
+            <tr>
+                <td *ngFor="let data of datas;">
+                    <figure [value]="data.value" [currency]="data.currency"></figure>
+                    <div class="grey">{{data.name}}</div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

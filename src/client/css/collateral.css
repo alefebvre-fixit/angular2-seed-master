@@ -294,42 +294,7 @@ f5f5f5
 
 
 
-.figures td {
-  border-left: 2px solid #eceff1;
-  border-right: 2px solid #eceff1;
-}
-.figures td:first-child {
-  border-left: none;
-}
-.figures td:last-child {
-  border-right: none;
-}
-.figures {
-  border:none;
-  border-collapse: collapse;
-  padding:8px;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);  box-sizing: border-box;
-  border-radius: 2px;
-  background-clip: padding-box;
-  background-color: #fff;
-}
-.figures table{
-  width: 100%;
-}
-.figures td {
-  color: #0288d1;
-  text-align: center;
-  padding: 1px;
-  transition: color 0.3s ease;
-  text-transform: uppercase;
-}
-.figures td:hover {
-  color: #FF1CAC;
-  text-decoration: none;
-}
-.grey {
-  color: #717171;
-}
+
 
 .card {
   border:none;

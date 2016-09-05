@@ -1,10 +1,15 @@
 import { Component, OnInit, Input, ViewChild} from '@angular/core';
 import { Router, ROUTER_DIRECTIVES } from '@angular/router';
+import {DROPDOWN_DIRECTIVES} from 'ng2-bootstrap/ng2-bootstrap';
+
+
 import { EntityService } from '../../services/index';
-import { GridComponent, GridConfiguration} from '../../shared/index';
+
+import { GridComponent, GridConfiguration, Statistics, Statistic} from '../../shared/index';
 import { ContactEditComponent} from './contact-edit.component';
 import {Contact} from './contact';
-import {DROPDOWN_DIRECTIVES} from 'ng2-bootstrap/ng2-bootstrap';
+
+
 import * as _ from 'lodash'
 
 @Component({
@@ -13,7 +18,7 @@ import * as _ from 'lodash'
   templateUrl: 'entity-summary.component.html',
   styleUrls: ['entity-summary-component.css'],
   directives: [
-    ROUTER_DIRECTIVES,DROPDOWN_DIRECTIVES,GridComponent,ContactEditComponent
+    ROUTER_DIRECTIVES,DROPDOWN_DIRECTIVES,GridComponent,ContactEditComponent,Statistics
   ],
   viewProviders: [EntityService],
 })
@@ -24,7 +29,9 @@ export class EntitySummaryComponent implements OnInit {
   
   private contacts: Object[];
   private config: GridConfiguration;
-  
+  private statistics: Statistic[];
+
+
   //cloned entity for edition
   private model: Object = {};
 
@@ -44,6 +51,12 @@ export class EntitySummaryComponent implements OnInit {
     this.config.editCallBack = (contact: any) => { // <-- note syntax here
         this.edit(contact);
     }
+
+    this.statistics = [ {"name" : 'Total Exposure', "value" : -260000, "currency" : 'usd', "history": undefined}, 
+                      {"name" : 'Trades', "value" : 243, "currency" : undefined, "history": undefined}, 
+                      {"name" : 'Contracts', "value" : 22, "currency" : undefined, "history": undefined}, 
+                      {"name" : 'Contacts', "value" : 10, "currency" : undefined, "history": undefined}
+                      ];
 
   }
 

@@ -8,32 +8,7 @@
         </div>
     </div>
 
-    <div class="figures">
-        <table>
-            <tbody>
-                <tr>
-                    <td>
-                        <figure [value]="exposure.netBalance"></figure>
-                        <div class="grey">Net Balance</div>
-                    </td>
-                    <td>
-                        <figure [value]="exposure.cashPosition"></figure>
-                        <div class="grey">Cash Position</div>
-                    </td>
-                    <td>
-                        <figure [value]="exposure.securityPosition"></figure>
-                        <div class="grey">Security Position</div>
-                    </td>
-                    <td>
-                        <figure [value]="exposure.requiredMargin"></figure>
-                        <div class="grey">Required Margin</div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-
-    <br>
+    <statistics [datas]="statistics"></statistics>
 
     <div class="row">
         <div class="col-md-4">
