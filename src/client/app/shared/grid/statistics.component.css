@@ -43,3 +43,24 @@
 .grey {
   color: #717171;
 }
+
+
+
+
+.chart {display: block; width: 40px; height: 30px}
+
+
+.stat-left{
+  float: left;
+}
+
+.stat-chart{
+  display: inline-block;
+  margin: 0 5px;
+}
+
+.stat-number{
+  display: inline-block;
+  margin: 0 5px;
+}
+

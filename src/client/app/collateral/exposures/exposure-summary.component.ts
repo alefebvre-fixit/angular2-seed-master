@@ -15,13 +15,13 @@ import { MTACard, ThresholdCard, RoundingCard} from './cards/index';
 
 export class ExposureSummaryComponent implements OnInit {
 
-  @Input() exposure: Object;
+  @Input() exposure: any;
   private statistics: Statistic[];
 
   constructor() {
-
-    this.statistics = [ {"name" : 'Net Balance', "value" : undefined, "currency" : undefined, "history": undefined}, 
-                      {"name" : 'Cash Position', "value" : 12, "currency" : undefined, "history": undefined}, 
+    this.exposure = {"mta":{}};
+    this.statistics = [ {"name" : 'Net Balance', "value" : this.exposure.netBalance, "currency" : undefined, "history": undefined}, 
+                      {"name" : 'Cash Position', "value" : 12000000, "currency" : 'usd', "history": []}, 
                       {"name" : 'Security Position', "value" : 12, "currency" : undefined, "history": undefined}, 
                       {"name" : 'Required Margin', "value" : 12, "currency" : undefined, "history": undefined}
                       ];
@@ -30,7 +30,7 @@ export class ExposureSummaryComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.exposure = {"mta":{}};
+    this.exposure = {"mta":{}, "netBalance":9999};
   }
 
 }
