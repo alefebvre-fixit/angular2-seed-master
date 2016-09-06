@@ -1,6 +1,7 @@
-import { Component, OnInit, Input} from '@angular/core';
-import { FigureComponent, Statistics, Statistic} from '../../shared/index';
+import { Component, OnInit, OnChanges, Input, SimpleChanges} from '@angular/core';
+import { FigureComponent, Statistics, Statistic, StatisticFactory} from '../../shared/index';
 import { MTACard, ThresholdCard, RoundingCard} from './cards/index';
+import { Exposure} from '../../models/index';
 
 @Component({
   moduleId: module.id,
@@ -8,29 +9,27 @@ import { MTACard, ThresholdCard, RoundingCard} from './cards/index';
   templateUrl: 'exposure-summary.component.html',
   styleUrls: ['exposure-summary.component.css'],
   directives: [
-    FigureComponent, MTACard, ThresholdCard, RoundingCard, Statistics
+    MTACard, ThresholdCard, RoundingCard, Statistics
   ],
   viewProviders: [],
 })
 
 export class ExposureSummaryComponent implements OnInit {
 
-  @Input() exposure: any;
+  @Input() exposure: Exposure;
+  
   private statistics: Statistic[];
 
-  constructor() {
-    this.exposure = {"mta":{}};
-    this.statistics = [ {"name" : 'Net Balance', "value" : this.exposure.netBalance, "currency" : undefined, "history": undefined}, 
-                      {"name" : 'Cash Position', "value" : 12000000, "currency" : 'usd', "history": []}, 
-                      {"name" : 'Security Position', "value" : 12, "currency" : undefined, "history": undefined}, 
-                      {"name" : 'Required Margin', "value" : 12, "currency" : undefined, "history": undefined}
-                      ];
+  constructor() {}
 
-
+  ngOnChanges(changes: SimpleChanges){
+    if (this.exposure != undefined){
+        this.statistics = StatisticFactory.create(this.exposure);
+    }
   }
 
   ngOnInit(): void {
-    this.exposure = {"mta":{}, "netBalance":9999};
+    this.exposure  = new Exposure();
   }
 
 }

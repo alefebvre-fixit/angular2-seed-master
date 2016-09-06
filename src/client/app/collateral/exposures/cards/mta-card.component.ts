@@ -1,5 +1,6 @@
 import { Component, OnInit, Input} from '@angular/core';
 import { FigureComponent} from '../../../shared/index';
+import { MTA} from '../../../models/index';
 
 @Component({
   moduleId: module.id,
@@ -14,11 +15,12 @@ import { FigureComponent} from '../../../shared/index';
 
 export class MTACard implements OnInit {
 
-  @Input() mta: any;
+  @Input() mta: MTA;
 
   constructor() {}
 
   ngOnInit(): void {
+    this.mta = new MTA();
   }
 
 }

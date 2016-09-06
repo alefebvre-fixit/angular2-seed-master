@@ -10,3 +10,4 @@ export * from './grid/grid-configuration';
 export * from './grid/figure.component';
 export * from './grid/statistics.component';
 export * from './grid/statistic';
+export * from './grid/impl/exposure-statistics';

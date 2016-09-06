@@ -1,5 +1,6 @@
 import { Component, OnInit, Input} from '@angular/core';
 import { FigureComponent} from '../../../shared/index';
+import { Threshold } from '../../../models/index';
 
 @Component({
   moduleId: module.id,
@@ -14,12 +15,12 @@ import { FigureComponent} from '../../../shared/index';
 
 export class ThresholdCard implements OnInit {
 
-  @Input() threshold: any;
+  @Input() threshold: Threshold;
 
   constructor() {}
 
   ngOnInit(): void {
-    this.threshold = {};
+    this.threshold = new Threshold();
   }
 
 }
