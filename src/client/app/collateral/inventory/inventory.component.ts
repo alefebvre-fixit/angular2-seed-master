@@ -44,7 +44,7 @@ export class InventoryComponent extends LoadingPage implements OnInit {
     config = {
       "columns" : [{ "name": "name", "header": "Name"},
                   { "name": "ISIN", "header": "ISIN"},
-                  { "name": "location", "header": "Location"},
+                  { "name": "category", "header": "Location"},
                   { "name": "maturity", "header": "Maturity"},
                   { "name": "last", "header": "Last"},
                   { "name": "volume", "header": "Volume"},

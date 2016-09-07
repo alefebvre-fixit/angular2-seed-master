@@ -4,7 +4,7 @@ import {Observable, Subject} from 'rxjs/Rx';
 import {Contact} from '../collateral/entities/contact.ts';
 
 @Injectable()
-export class EntityService {
+export class CollateralsService {
 
   private _contacts$: Subject<Contact[]>; 
   private dataStore: {
@@ -16,26 +16,6 @@ export class EntityService {
     this._contacts$ = <Subject<Contact[]>>new Subject();
 
     this.loadAllContacts();
-  }
-
-  getAll(): any {
-   return this.http.get('app/data/entities.json')
-   .map((res: Response) => {
-     return res.json();
-   });
-  }
-
-  getOneById(id: string): Observable<any> {
-   return this.http.get('app/data/entities.json')
-   .map((res: Response) => {
-     let item: any;
-     res.json().forEach((s: any) => {
-       if (s.id == id) {
-         item = s;
-       }
-     });
-     return item;
-   });
   }
 
   getContract(): any {
