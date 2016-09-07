@@ -1,8 +1,8 @@
 import { Component, OnInit, EventEmitter, Input, Output, ViewChild } from '@angular/core';
 import { Router, ROUTER_DIRECTIVES } from '@angular/router';
 import { EntityService } from '../../services/index';
-import {Contact} from './contact';
-import {MODAL_DIRECTIVES, BS_VIEW_PROVIDERS} from 'ng2-bootstrap/ng2-bootstrap';
+import { Contact } from '../../models/index';
+import { MODAL_DIRECTIVES, BS_VIEW_PROVIDERS } from 'ng2-bootstrap/ng2-bootstrap';
 
 @Component({
   moduleId: module.id,

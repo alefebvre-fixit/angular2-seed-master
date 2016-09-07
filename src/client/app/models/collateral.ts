@@ -1,23 +1,14 @@
 
+export class Collateral {
 
-export class Collateral{
-    
-    id: string;
-    code: string;
-    name: string;
-    description: string;
-    currency: string;
-
-    cashPosition: number;
-    securityPosition: number;
-    netBalance: number;
-    requiredMargin: number;
-
-    threshold: Threshold;
-    mta: MTA;
+    constructor(
+        public id: string,
+        public name: string,
+        public code: string,
+        public category: string,
+        public type: string,
+        public value: number
+    ) { }
 
 }
 
-
-
-{"name":"EUR","ISIN":"EUR","category":"Cash","type":"cash","value":"6000000"}]

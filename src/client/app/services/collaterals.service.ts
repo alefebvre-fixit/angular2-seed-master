@@ -1,92 +1,84 @@
 import { Injectable } from '@angular/core';
 import { Http, Response } from '@angular/http';
 import {Observable, Subject} from 'rxjs/Rx';
-import {Contact} from '../collateral/entities/contact.ts';
+import {Collateral} from '../models/index';
 
 @Injectable()
-export class CollateralsService {
+export class CollateralService {
 
-  private _contacts$: Subject<Contact[]>; 
+  private _collaterals$: Subject<Collateral[]>; 
   private dataStore: {
-    contacts: Contact[]
+    collaterals: Collateral[]
   };
 
   constructor(private http: Http) {
-    this.dataStore = { contacts: [] };
-    this._contacts$ = <Subject<Contact[]>>new Subject();
+    this.dataStore = { collaterals: [] };
+    this._collaterals$ = <Subject<Collateral[]>>new Subject();
 
-    this.loadAllContacts();
+    this.loadAllCollaterals();
   }
 
-  getContract(): any {
-   return this.http.get('app/data/contracts.json')
-   .map((res: Response) => {
-     return res.json();
-   });
+  get collaterals$(): Observable<Collateral[]> {
+    return this._collaterals$.asObservable();
   }
 
-  get contact$(): Observable<Contact[]> {
-    return this._contacts$.asObservable();
+  loadAllCollaterals(): void {
+    this.http.get('app/data/collaterals.json').map(response => response.json()).subscribe(data => {
+      this.dataStore.collaterals = data;
+      this._collaterals$.next(this.dataStore.collaterals);
+    }, error => console.log('Could not load collaterals.'));
   }
 
-  loadAllContacts(): void {
-    this.http.get('app/data/contacts.json').map(response => response.json()).subscribe(data => {
-      this.dataStore.contacts = data;
-      this._contacts$.next(this.dataStore.contacts);
-    }, error => console.log('Could not load contacts.'));
-  }
-
-  loadContact(id: any) {
-    this.http.get('app/data/contacts.json').map(response => response.json()).subscribe(data => {
+  loadCollateral(id: string) {
+    this.http.get('app/data/collaterals.json').map(response => response.json()).subscribe(data => {
       let notFound = true;
 
-      this.dataStore.contacts.forEach((item, index) => {
+      this.dataStore.collaterals.forEach((item, index) => {
         if (item.id === data.id) {
-          this.dataStore.contacts[index] = data;
+          this.dataStore.collaterals[index] = data;
           notFound = false;
         }
       });
 
       if (notFound) {
-        this.dataStore.contacts.push(data);
+        this.dataStore.collaterals.push(data);
       }
 
-      this._contacts$.next(this.dataStore.contacts);
-    }, error => console.log('Could not load contact.'));
+      this._collaterals$.next(this.dataStore.collaterals);
+    }, error => console.log('Could not load collateral.'));
   }
 
-  create(contact: Contact) {
-    this.dataStore.contacts.push(contact);
-    this._contacts$.next(this.dataStore.contacts);
+  create(collateral: Collateral) {
+    this.dataStore.collaterals.push(collateral);
+    this._collaterals$.next(this.dataStore.collaterals);
     /*
-    this.http.post('app/data/contacts.json', JSON.stringify(contact))
+    this.http.post('app/data/collaterals.json', JSON.stringify(collateral))
       .map(response => response.json()).subscribe(data => {
-        this.dataStore.contacts.push(data);
-        this._contacts$.next(this.dataStore.contacts);
-      }, error => console.log('Could not create contact.'));
+        this.dataStore.collaterals.push(data);
+        this._collaterals$.next(this.dataStore.collaterals);
+      }, error => console.log('Could not create collateral.'));
     */
   }
 
-  update(contact: Contact) {
-    this.http.put('app/data/contacts.json', JSON.stringify(contact))
+  update(collateral: Collateral) {
+    this.http.put('app/data/collaterals.json', JSON.stringify(collateral))
       .map(response => response.json()).subscribe(data => {
-        this.dataStore.contacts.forEach((contact, i) => {
-          if (contact.id === data.id) { this.dataStore.contacts[i] = data; }
+        this.dataStore.collaterals.forEach((collateral, i) => {
+          if (collateral.id === data.id) { this.dataStore.collaterals[i] = data; }
         });
 
-        this._contacts$.next(this.dataStore.contacts);
-      }, error => console.log('Could not update contact.'));
+        this._collaterals$.next(this.dataStore.collaterals);
+      }, error => console.log('Could not update collateral.'));
   }
 
-  remove(contactId: number) {
-    this.http.delete('app/data/contacts.json').subscribe(response => {
-      this.dataStore.contacts.forEach((contact, i) => {
-        if (contact.id === contactId) { this.dataStore.contacts.splice(i, 1); }
+  remove(id: string) {
+    this.http.delete('app/data/collaterals.json').subscribe(response => {
+      this.dataStore.collaterals.forEach((collateral, i) => {
+        if (collateral.id === id) { this.dataStore.collaterals.splice(i, 1); }
       });
 
-      this._contacts$.next(this.dataStore.contacts);
-    }, error => console.log('Could not delete contact.'));
+      this._collaterals$.next(this.dataStore.collaterals);
+    }, error => console.log('Could not delete collateral.'));
   }
-
 
 }

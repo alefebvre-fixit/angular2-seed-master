@@ -7,7 +7,7 @@ import { EntityService } from '../../services/index';
 
 import { GridComponent, GridConfiguration, Statistics, Statistic} from '../../shared/index';
 import { ContactEditComponent} from './contact-edit.component';
-import {Contact} from './contact';
+import { Contact } from '../../models/index';
 
 
 import * as _ from 'lodash'
@@ -45,7 +45,7 @@ export class EntitySummaryComponent implements OnInit {
               { "name": "phone", "header": "Phone"}
               ]);
 
-    this.config.edit = true;
+    this.config.view = true;
     this.config.edit = true;
 
     this.statistics = [ {"name" : 'Total Exposure', "value" : -260000, "currency" : 'usd', "history": undefined}, 
