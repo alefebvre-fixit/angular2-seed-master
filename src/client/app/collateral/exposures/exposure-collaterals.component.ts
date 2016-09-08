@@ -45,16 +45,20 @@ export class ExposureCollateralsComponent implements OnInit {
 
   loadCollaterals(): void {
       this.collateralService.collaterals$.subscribe((collaterals: Collateral[]) => {
-      this.collaterals = collaterals;
-      this.statistics = CollateralStatisticFactory.create(collaterals);
+        this.collaterals = collaterals;
+        this.statistics = CollateralStatisticFactory.create(collaterals);
 
-      CollateralStatisticFactory.valueByCategory(collaterals);
+        //load chart by category      
+        let categories = CollateralStatisticFactory.valueByCategory(collaterals);
+        this.categoryChartLabels = categories.labels; 
+        this.categoryChartData[0].data = categories.values; 
 
-
+        //load chart by type
+        let types = CollateralStatisticFactory.valueByType(collaterals);
+        this.typeChartLabels = types.labels; 
+        this.typeChartData[0].data = types.values; 
     });
   }
-
-
 
   public barChartOptions:any = {
     scaleShowVerticalLines: false,

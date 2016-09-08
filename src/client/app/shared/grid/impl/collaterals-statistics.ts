@@ -1,5 +1,6 @@
 
 import {Statistic} from '../statistic';
+import {ChartConfiguration} from './chart-configuration';
 import {Collateral} from './../../../models/index';
 
 import * as _ from 'lodash';
@@ -34,28 +35,25 @@ export class CollateralStatisticFactory {
     return result;
   }
 
-  static valueByCategory(collaterals: Collateral[]): Map<string, number> {
+  static valueByCategory(collaterals: Collateral[]): ChartConfiguration {
     return this.valueBy(collaterals, "category");
   }
 
-  static valueByType(collaterals: Collateral[]): Map<string, number> {
-    return this.valueBy(collaterals, "category");
+  static valueByType(collaterals: Collateral[]): ChartConfiguration {
+    return this.valueBy(collaterals, "type");
   }
 
-  static valueBy(collaterals: Collateral[], group: string): Map<string, number> {
+  static valueBy(collaterals: Collateral[], group: string): ChartConfiguration {
 
-    let result = new Map<String, number>();
+    let result = new ChartConfiguration(new Array<string>(), new Array<number>());
 
-    let values: Array<ValuePair>;
-
-    values = _(collaterals).groupBy(group).map(function (value: any, key: any) {
+    let values = _(collaterals).groupBy(group).map(function (value: any, key: any) {
       var sum = _.reduce(value, function (sum: number, collateral: Collateral) { return sum + collateral.value; }, 0);
       return new ValuePair(key, sum);
     }).value();
 
     for (let entry of values) {
-      result.set
-      console.log(entry); // 1, "string", false
+      result.push(entry.name, entry.value);
     }
 
     return result;

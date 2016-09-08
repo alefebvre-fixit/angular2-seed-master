@@ -14,8 +14,8 @@
 {"name":"AAB 7.125%06JUL22","code":"XS0802995166","category":"Government-D","type":"security","value":5000},
 {"name":"AAB ANN OPTINTZC36","code":"XS0252108674","category":"Government-D","type":"security","value":2000},
 {"name":"AAB AUD 5%21MCH19","code":"XS0904123535","category":"Government-D","type":"security","value":10000},
-{"name":"USD","code":"USD","category":"Cash","type":"cash","value":5000000},
-{"name":"EUR","code":"EUR","category":"Cash","type":"cash","value":6000000}]
+{"name":"USD","code":"USD","category":"USD","type":"cash","value":200000},
+{"name":"EUR","code":"EUR","category":"EUR","type":"cash","value":100000}]
 
 
 
