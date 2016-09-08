@@ -10,19 +10,19 @@ export class CollateralStatisticFactory {
 
     var result = new Array<Statistic>();
 
-    let cashValue = collaterals.filter(function(collateral: Collateral) { return collateral.type == 'cash';}).reduce(function(sum, collateral) {
+    let cashValue = collaterals.filter(function (collateral: Collateral) { return collateral.type == 'cash'; }).reduce(function (sum, collateral) {
       return sum + collateral.value;
     }, 0);
 
-    let securityValue = collaterals.filter(function(collateral: Collateral) { return collateral.type == 'security';}).reduce(function(sum, collateral) {
+    let securityValue = collaterals.filter(function (collateral: Collateral) { return collateral.type == 'security'; }).reduce(function (sum, collateral) {
       return sum + collateral.value;
     }, 0);
 
-    let collateralsNumber = collaterals.reduce(function(sum, collateral) {
+    let collateralsNumber = collaterals.reduce(function (sum, collateral) {
       return sum + 1;
     }, 0);
 
-    var totalValue = collaterals.reduce(function(sum, collateral) {
+    var totalValue = collaterals.reduce(function (sum, collateral) {
       return sum + collateral.value;
     }, 0);
 
@@ -35,30 +35,28 @@ export class CollateralStatisticFactory {
   }
 
   static valueByCategory(collaterals: Collateral[]): Array<ValuePair> {
-    
-    var result = new Array<ValuePair>();
-
-
-    console.log("Group By:");
-    console.log(_(collaterals).groupBy("type").valueOf());
-
-
-    var b = _(collaterals).groupBy("type").map(function(b: any) {return b.reduce(function(sum:any, collateral:Collateral){return sum + collateral.value}, 0)})
-      .valueOf()
-
-      console.log(b);
-
-    return b;
-
+    return this.valueBy(collaterals, "category");
   }
 
+  static valueByType(collaterals: Collateral[]): Array<ValuePair> {
+    return this.valueBy(collaterals, "category");
+  }
 
+  static valueBy(collaterals: Collateral[], group: string): Array<ValuePair> {
+
+    var result: Array<ValuePair>;
+
+    result = _(collaterals).groupBy(group).map(function (value: any, key: any) {
+      var sum = _.reduce(value, function (sum: number, collateral: Collateral) { return sum + collateral.value; }, 0);
+      return new ValuePair(key, sum);
+    }).value();
+
+    return result;
+  }
 }
 
 
-export class ValuePair{
-
-  constructor(public name:string, public value:number){}
-
-} 
+export class ValuePair {
+  constructor(public name: string, public value: number) { }
+}
 
