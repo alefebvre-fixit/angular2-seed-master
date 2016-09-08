@@ -1,10 +1,38 @@
+<statistics [datas]="statistics">
+
+</statistics>
 
 
-<statistics [datas]="statistics"></statistics>
+
+
+<div class="row collateral-panel">
+        <div class="col-md-6">
+                <div class="panel panel-default">
+                        <div class="panel-heading">
+                                <h3 class="panel-title">Threshold</h3>
+                        </div>
+                        <div class="panel-body">
+                                <base-chart class="chart" [datasets]="barChartData" [labels]="barChartLabels" [options]="barChartOptions" [legend]="barChartLegend"
+                                        [chartType]="barChartType"></base-chart>
+                        </div>
+                </div>
+        </div>
+        <div class="col-md-6">
+                <div class="panel panel-default">
+                        <div class="panel-heading">
+                                <h3 class="panel-title">Threshold</h3>
+                        </div>
+                        <div class="panel-body">
+
+                        </div>
+                </div>
+        </div>
+</div>
+
+
+
 
 <grid [datas]="collaterals" [config]="config" [loading]="loading">
         <table-buttons>
         </table-buttons>
 </grid>
-
-

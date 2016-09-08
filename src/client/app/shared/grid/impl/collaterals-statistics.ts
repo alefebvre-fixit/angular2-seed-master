@@ -34,6 +34,31 @@ export class CollateralStatisticFactory {
     return result;
   }
 
+  static valueByCategory(collaterals: Collateral[]): Array<ValuePair> {
+    
+    var result = new Array<ValuePair>();
+
+
+    console.log("Group By:");
+    console.log(_(collaterals).groupBy("type").valueOf());
+
+
+    var b = _(collaterals).groupBy("type").map(function(b: any) {return b.reduce(function(sum:any, collateral:Collateral){return sum + collateral.value}, 0)})
+      .valueOf()
+
+      console.log(b);
+
+    return b;
+
+  }
+
 
 }
+
+
+export class ValuePair{
+
+  constructor(public name:string, public value:number){}
+
+} 
 
