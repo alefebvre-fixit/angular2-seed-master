@@ -34,22 +34,29 @@ export class CollateralStatisticFactory {
     return result;
   }
 
-  static valueByCategory(collaterals: Collateral[]): Array<ValuePair> {
+  static valueByCategory(collaterals: Collateral[]): Map<string, number> {
     return this.valueBy(collaterals, "category");
   }
 
-  static valueByType(collaterals: Collateral[]): Array<ValuePair> {
+  static valueByType(collaterals: Collateral[]): Map<string, number> {
     return this.valueBy(collaterals, "category");
   }
 
-  static valueBy(collaterals: Collateral[], group: string): Array<ValuePair> {
+  static valueBy(collaterals: Collateral[], group: string): Map<string, number> {
 
-    var result: Array<ValuePair>;
+    let result = new Map<String, number>();
 
-    result = _(collaterals).groupBy(group).map(function (value: any, key: any) {
+    let values: Array<ValuePair>;
+
+    values = _(collaterals).groupBy(group).map(function (value: any, key: any) {
       var sum = _.reduce(value, function (sum: number, collateral: Collateral) { return sum + collateral.value; }, 0);
       return new ValuePair(key, sum);
     }).value();
+
+    for (let entry of values) {
+      result.set
+      console.log(entry); // 1, "string", false
+    }
 
     return result;
   }

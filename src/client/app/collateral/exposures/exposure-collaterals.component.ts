@@ -56,7 +56,7 @@ export class ExposureCollateralsComponent implements OnInit {
 
 
 
-    public barChartOptions:any = {
+  public barChartOptions:any = {
     scaleShowVerticalLines: false,
     responsive: true,
     legend: {
@@ -70,14 +70,21 @@ export class ExposureCollateralsComponent implements OnInit {
             display: false
         }]
     }
-
   };
-  public barChartLabels:string[] = ['1', '2', '3', '4'];
   public barChartType:string = 'doughnut';
   public barChartLegend:boolean = false;
 
-  public barChartData:any[] = [
-    {data: [20, 30, 45, 5], label:'Series A'}
+
+
+  public categoryChartLabels:string[] = [];
+  public categoryChartData:any[] = [
+    {data: [], label:'Value'}
   ];
+
+  public typeChartLabels:string[] = [];
+  public typeChartData:any[] = [
+    {data: [], label:'Value'}
+  ];
+
 
 }
