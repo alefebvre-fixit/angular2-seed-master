@@ -1,8 +1,9 @@
 <div>
-    <span [ngClass]="{'figure-positive': value> 0, 'figure-negative': value < 0, 'figure-negative': value < 0, 'figure-neutral': value == 0}" >
+    <span [ngClass]="{'figure-positive': value> 0, 'figure-negative': value < 0, 'figure-negative': value < 0, 'figure-neutral': value == 0}" class="figure">
     {{value | removeUndefined}}
     </span>
-    <span class="figure-currency">
+    
+    <span class="figure-currency figure">
     {{currency}}
     </span>
 </div>

@@ -3,16 +3,24 @@
   <div style="background-color: white;">  
   <tabset [justified]="false">
     <tab heading="SUMMARY" >
-      <exposure-summary [exposure]="exposure"> </exposure-summary>
+      <div class="tab-body">
+        <exposure-summary [exposure]="exposure"> </exposure-summary>
+      </div>
     </tab>
     <tab heading="UNDERLYINGS">
-      <exposure-underlyings></exposure-underlyings>
+      <div class="tab-body">
+        <exposure-underlyings></exposure-underlyings>
+      </div>
     </tab>
     <tab heading="COLLATERALS">
-      <exposure-collaterals></exposure-collaterals>
+      <div class="tab-body">
+        <exposure-collaterals></exposure-collaterals>
+      </div>
     </tab>
     <tab heading="ALLOCATIONS">
-      <exposure-allocations></exposure-allocations>
+      <div class="tab-body">
+        <exposure-allocations></exposure-allocations>
+      </div>
     </tab>
   </tabset>
   </div>

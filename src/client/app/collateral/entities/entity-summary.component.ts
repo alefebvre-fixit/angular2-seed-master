@@ -4,11 +4,10 @@ import {DROPDOWN_DIRECTIVES} from 'ng2-bootstrap/ng2-bootstrap';
 
 
 import { EntityService } from '../../services/index';
+import { Contact } from '../../models/index';
 
 import { GridComponent, GridConfiguration, Statistics, Statistic} from '../../shared/index';
 import { ContactEditComponent} from './contact-edit.component';
-import { Contact } from '../../models/index';
-
 
 import * as _ from 'lodash'
 

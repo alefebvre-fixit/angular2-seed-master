@@ -1,7 +1,11 @@
 <section [name]="'Inventory'"></section>
 
+<div class="tab-body">
+
 <grid [datas]="positions" [config]="config" [loading]="loading">
         <table-buttons>
           <button type="button" class="btn btn-primary" (click)="switch()">UPLOAD INVENTORY</button>
         </table-buttons>
 </grid>
+
+</div>

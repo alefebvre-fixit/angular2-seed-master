@@ -3,15 +3,17 @@
 <div style="background-color: white;">
   <tabset [justified]="false">
     <tab heading="SUMMARY">
-      <div style="background-color: #eceff1; padding-top:50px">
+      <div class="tab-body">
         <entity-summary [entity]="entity"> </entity-summary>
       </div>
     </tab>
     <tab heading="CONTRACTS">
-      <grid [datas]="contracts" [config]="config" [loading]="loading">
-        <table-buttons>
-        </table-buttons>
-      </grid>
+      <div class="tab-body">
+        <grid [datas]="contracts" [config]="config" [loading]="loading">
+          <table-buttons>
+          </table-buttons>
+        </grid>
+      </div>
     </tab>
   </tabset>
 </div>

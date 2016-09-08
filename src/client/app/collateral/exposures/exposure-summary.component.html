@@ -1,25 +1,24 @@
-<div class="tab-body">
-    <div class="panel panel-default">
-        <div class="panel-heading">
-            <h3 class="panel-title">Summary</h3>
-        </div>
-        <div class="panel-body">
-            This is a summary23
-        </div>
+
+<div class="panel panel-default collateral-panel">
+    <div class="panel-heading">
+        <h3 class="panel-title">Summary</h3>
     </div>
-
-    <statistics [datas]="statistics"></statistics>
-
-    <div class="row">
-        <div class="col-md-4">
-            <threshold-card [threshold]="exposure.threshold"></threshold-card> 
-        </div>
-        <div class="col-md-4">
-            <rounding-card [rounding]="exposure.rounding"></rounding-card> 
-        </div>
-        <div class="col-md-4">
-            <mta-card [mta]="exposure.mta"></mta-card> 
-        </div>
+    <div class="panel-body">
+        This is a summary23
     </div>
-
 </div>
+
+<statistics [datas]="statistics"></statistics>
+
+<div class="row collateral-panel">
+    <div class="col-md-4" style="padding-left:0px">
+        <threshold-card [threshold]="exposure.threshold"></threshold-card> 
+    </div>
+    <div class="col-md-4">
+        <rounding-card [rounding]="exposure.rounding"></rounding-card> 
+    </div>
+    <div class="col-md-4" style="padding-right:0px">
+        <mta-card [mta]="exposure.mta"></mta-card> 
+    </div>
+</div>
+
