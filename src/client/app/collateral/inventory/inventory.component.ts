@@ -31,10 +31,10 @@ export class InventoryComponent extends LoadingPage implements OnInit {
   }
 
   ngOnInit(): void {
-    this.loadContracts();
+    this.loadPositions();
   }
 
-  loadContracts(): void {
+  loadPositions(): void {
     this.inventoryService.getPositions().subscribe((positions: Object[]) => {
       this.positions = positions;
     });

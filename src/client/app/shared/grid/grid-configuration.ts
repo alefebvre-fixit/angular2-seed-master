@@ -5,7 +5,8 @@ export class GridConfiguration{
 
   edit: boolean = false;
   view: boolean = true;
-
+  selector: boolean = false;
+  
 }
 
 export class ColumnConfiguration{

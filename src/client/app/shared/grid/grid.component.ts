@@ -32,5 +32,13 @@ export class GridComponent implements OnInit {
 
   selectedRowId:any;
 
+  selectItem(item: any){
+    if (item.selected){
+      item.selected = false;
+    } else {
+      item.selected = true;
+    }
+  }
+
 
 }
