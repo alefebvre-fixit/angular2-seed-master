@@ -54,8 +54,6 @@ export class ExposuresComponent implements OnInit {
 
   public disabled:boolean = false;
   public status:{isopen:boolean} = {isopen: false};
-  public items:Array<string> = ['The first choice!',
-    'And another choice for you.', 'but wait! A third!'];
  
   public toggled(open:boolean):void {
     console.log('Dropdown is now: ', open);
