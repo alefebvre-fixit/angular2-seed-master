@@ -30,4 +30,7 @@ export class GridComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  selectedRowId:any;
+
+
 }

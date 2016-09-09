@@ -36,31 +36,31 @@
                                     <th *ngFor="let column of config.columns;">
                                         <span>{{column.header}}</span>
                                     </th>
-                                    <th class="text-right" *ngIf="config.view || config.edit">
+                                    <th class="button-column" *ngIf="config.view || config.edit" width="80px">
                                     </th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr *ngFor="let data of datas;">
+                                <tr *ngFor="let data of datas;" (mouseover)="selectedRowId=data.id" height="42px">
                                     <td *ngFor="let column of config.columns;">
-
                                         <div *ngIf="config.view">
                                             <a (click)="view.emit(data)" href="javascript:undefined" class="grid-link">
-                                        {{data[column.name]}}
-                                    </a>
+                                                {{data[column.name]}}
+                                            </a>
                                         </div>
                                         <div *ngIf="!config.view">
                                             {{data[column.name]}}
                                         </div>
-
                                     </td>
-                                    <td class="text-right" *ngIf="config.view || config.edit">
+                                    <td class="button-column" *ngIf="config.view || config.edit">
+                                        <div [hidden]="selectedRowId!=data.id">
                                         <button type="button" class="btn btn-link" (click)="edit.emit(data)" style="padding:0px 0px" *ngIf="config.edit">
-                                    <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
-                                </button>
+                                            <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                                        </button>
                                         <button type="button" class="btn btn-link" (click)="view.emit(data)" style="padding:0px 0px" *ngIf="config.view">
-                                    <span class="glyphicon glyphicon-zoom-in" aria-hidden="true"></span>
-                                </button>
+                                            <span class="glyphicon glyphicon-zoom-in" aria-hidden="true"></span>
+                                        </button>
+                                        </div>
                                     </td>
                                 </tr>
                             </tbody>
