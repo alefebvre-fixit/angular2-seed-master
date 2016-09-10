@@ -1,26 +1,77 @@
-<div class="tab-body">
-
-
 
 
   <!-- Asynchronous results -->
+
+
+
+
   <h4>Asynchronous results</h4>
   <pre class="card card-block card-header">Model: {{asyncSelected | json}}</pre>
-  <input [(ngModel)]="asyncSelected"
-         [typeahead]="dataSource"
-         (typeaheadLoading)="changeTypeaheadLoading($event)"
-         (typeaheadNoResults)="changeTypeaheadNoResults($event)"
-         (typeaheadOnSelect)="typeaheadOnSelect($event)"
-         [typeaheadOptionsLimit]="7"
-         [typeaheadOptionField]="'name'"
-         placeholder="Locations loaded with timeout"
-         class="form-control">
+
   <div *ngIf="typeaheadLoading===true">
     <i class="glyphicon glyphicon-refresh ng-hide" style=""></i>
   </div>
   <div *ngIf="typeaheadNoResults===true" class="" style="">
     <i class="glyphicon glyphicon-remove"></i> No Results Found
   </div>
+
+
+
+  <br>
+  <br>
+
+
+  <div class="panel panel-default collateral-panel">
+        <div class="panel-heading table-toolbar">
+            <table style="width:100%">
+                <tr>
+                    <td width="50%">
+                        <input [(ngModel)]="asyncSelected"
+                              [typeahead]="positions"
+                              (typeaheadLoading)="changeTypeaheadLoading($event)"
+                              (typeaheadNoResults)="changeTypeaheadNoResults($event)"
+                              (typeaheadOnSelect)="typeaheadOnSelect($event)"
+                              [typeaheadOptionsLimit]="7"
+                              [typeaheadOptionField]="'name'"
+                              placeholder="Locations loaded with timeout"
+                              class="form-control" width="200px">
+                    </td>
+                    <td width="50%" style="text-align:right;">
+                        <button type="button" class="btn btn-primary" (click)="openInventory()">INVENTORY</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    <div class="panel-body">
+        <div *ngIf="collateral != undefined">
+            <table class="data-list">
+                <tbody>
+                    <tr>
+                        <th>Country:</th>
+                        <td>{{collateral.country}}</td>
+                    </tr>
+                    <tr>
+                        <th>Address:</th>
+                        <td>{{collateral.streetAddress}}</td>
+                    </tr>
+                    <tr>
+                        <th>City:</th>
+                        <td>{{collateral.city}}</td>
+                    </tr>
+                    <tr>
+                        <th>Comment:</th>
+                        <td>{{collateral.comment}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+
+
+    Hello
+    {{collaterals | json}}
 
 
 

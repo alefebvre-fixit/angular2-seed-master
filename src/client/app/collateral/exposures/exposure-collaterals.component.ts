@@ -20,7 +20,7 @@ import { FigureComponent, Statistics, Statistic, CollateralStatisticFactory} fro
 
 export class ExposureCollateralsComponent implements OnInit {
 
-  private collaterals: Object[];
+  private collaterals: Collateral[];
   private config: GridConfiguration;
   private statistics: Statistic[];
 
