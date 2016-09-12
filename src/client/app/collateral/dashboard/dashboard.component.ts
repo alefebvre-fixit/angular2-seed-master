@@ -9,7 +9,7 @@ import { RankedList, Statistics, Statistic} from '../../shared/index';
   templateUrl: 'dashboard.component.html',
   styleUrls: ['dashboard.component.css'],
   directives: [
-    ROUTER_DIRECTIVES, SectionComponent, CHART_DIRECTIVES, RankedList
+    ROUTER_DIRECTIVES, SectionComponent, CHART_DIRECTIVES, RankedList, Statistics
   ],
   viewProviders: [],
 })
@@ -21,6 +21,12 @@ export class DashboardComponent implements OnInit {
   
   private topMarginCall: Statistic[];
   private topMarginCallConfig = {"title": "Top 5 Margin Call"};
+
+  private disputes: Statistic[];
+  private disputesConfig = {"title": "Disputes"};
+
+  private statistics: Statistic[];
+
 
 
   constructor(private router: Router) {
@@ -39,34 +45,70 @@ export class DashboardComponent implements OnInit {
       { "name": 'RBS-Swap', "value": 10000, "currency": 'usd', "history": undefined }
     ];
 
+    this.disputes = [{ "name": 'HSBC-Swap', "value": 50000, "currency": 'usd', "history": undefined },
+      { "name": 'LCH-Options', "value": 40000, "currency": 'usd', "history": undefined },
+      { "name": 'Santander-Swap', "value": 30000, "currency": 'usd', "history": undefined },
+      { "name": 'Santander-Repo', "value": 20000, "currency": 'usd', "history": undefined },
+      { "name": 'BlueCrest-Swap', "value": 10000, "currency": 'usd', "history": undefined }
+    ];
+
+    this.statistics = [ {"name" : 'Total Exposure', "value" : -2600000, "currency" : 'usd', "history": undefined}, 
+                        {"name" : 'Total Collateral', "value" : 3500000, "currency" : 'usd', "history": undefined}, 
+                      {"name" : 'Trades', "value" : 243000, "currency" : undefined, "history": undefined}, 
+                      {"name" : 'Contracts', "value" : 522, "currency" : undefined, "history": undefined}, 
+                      {"name" : 'Disputes', "value" : 12, "currency" : undefined, "history": undefined}
+                      ];
+
   }
 
   ngOnInit(): void {
   }
 
-  public barChartOptions: any = {
-    scaleShowVerticalLines: false,
-    responsive: true,
+  private exposureHistoryDatas = [
+    {
+      label: "Exposure",
+      data: [120, 190, 3, 5, 20, 30]
+    }
+  ];
+  private exposureHistoryLabels = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'];
+  private exposureHistoryOptions = {
     legend: {
       display: false
     },
     scales: {
       yAxes: [{
-        display: false
-      }],
-      xAxes: [{
-        display: false
+        ticks: {
+          beginAtZero: true
+        }
       }]
     }
-
   };
-  public barChartLabels: string[] = ['1', '2', '3', '4', '5', '6', '7'];
-  public barChartType: string = 'bar';
-  public barChartLegend: boolean = false;
 
-  public barChartData: any[] = [
-    { data: [65, 59, 80, 81, 56, 55, 70], label: 'Series A' }
+  private statusDatas = [
+    {
+      label: "statusDatas",
+      data: [12, 3, 5, 20, 30]
+    }
   ];
+  
+  private statusLabels = ['PRICED', 'ALLOCATED', 'DISPUTED', 'VALIDATED', 'EXECUTED'];
+  
+  private statusOptions = {
+    scaleShowVerticalLines: false,
+    responsive: true,
+    legend: {
+      display: true
+    },
+    scales: {
+        yAxes: [{
+            display: false
+        }],
+        xAxes: [{
+            display: false
+        }]
+    }
+  };
+
 
 
 

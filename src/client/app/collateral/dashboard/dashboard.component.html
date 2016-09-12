@@ -1,32 +1,62 @@
 <section [name]="'Dashboard'"></section>
 
-There will be something here
-
-
 
 <div class="tab-body">
 
-    <div class="row">
-        <div class="col-md-3">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h3 class="panel-title">Threshold</h3>
-                </div>
-                <div class="panel-body">
-                    <base-chart class="chart" [datasets]="barChartData" [labels]="barChartLabels" [options]="barChartOptions" [legend]="barChartLegend"
-                        [chartType]="barChartType"></base-chart>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-
-            <ranked-list [datas]="topMarginCall" [config]="topMarginCallConfig"></ranked-list>
-
-        </div>
-        <div class="col-md-4">
-
-            <ranked-list [datas]="topExposures" [config]="topExposuresConfig"></ranked-list>
-
+    <div class="row collateral-panel">
+        <div class="col-md-12">
+            <statistics [datas]="statistics"></statistics>
         </div>
     </div>
+
+    <div class="row collateral-panel">
+            <div class="col-md-6">
+                    <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Exposure History</h3>
+                            </div>
+                            <div class="panel-body">
+                                <base-chart
+                                class="chart"
+                                [datasets]="exposureHistoryDatas"
+                                [labels]="exposureHistoryLabels"
+                                [options]="exposureHistoryOptions"
+                                [chartType]="'line'">
+                                </base-chart>
+                            </div>
+                    </div>
+            </div>
+            <div class="col-md-6">
+                    <div class="panel panel-default">
+                            <div class="panel-heading">
+                                    <h3 class="panel-title">Status Distribution</h3>
+                            </div>
+                            <div class="panel-body">
+                                <base-chart
+                                class="chart"
+                                [datasets]="statusDatas"
+                                [labels]="statusLabels"
+                                [options]="statusOptions"
+                                [chartType]="'doughnut'">
+                                </base-chart>
+                            </div>
+                    </div>
+            </div>
+    </div>
+
+    <div class="row collateral-panel">
+        <div class="col-md-4">
+            <ranked-list [datas]="disputes" [config]="disputesConfig"></ranked-list>
+        </div>
+        <div class="col-md-4">
+            <ranked-list [datas]="topMarginCall" [config]="topMarginCallConfig"></ranked-list>
+        </div>
+        <div class="col-md-4">
+            <ranked-list [datas]="topExposures" [config]="topExposuresConfig"></ranked-list>
+        </div>
+    </div>
+
 </div>
+
+
+

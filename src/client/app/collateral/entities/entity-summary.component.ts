@@ -2,7 +2,6 @@ import { Component, OnInit, Input, ViewChild} from '@angular/core';
 import { Router, ROUTER_DIRECTIVES } from '@angular/router';
 import {DROPDOWN_DIRECTIVES} from 'ng2-bootstrap/ng2-bootstrap';
 
-
 import { EntityService } from '../../services/index';
 import { Contact } from '../../models/index';
 
@@ -29,8 +28,6 @@ export class EntitySummaryComponent implements OnInit {
   private contacts: Object[];
   private config: GridConfiguration;
   private statistics: Statistic[];
-
-
 
   //cloned entity for edition
   private model: Object = {};
