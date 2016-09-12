@@ -1,36 +1,16 @@
 <div class="panel panel-default analytics">
     <div class="panel-heading">
-        <h4 class="panel-title analytics-title">Top 5 exposures</h4>
+        <h4 class="panel-title analytics-title">{{config.title}}</h4>
     </div>
     <div class="panel-body">
         <table class="analytics-list ranked">
             <tbody>
                 <tr *ngFor="let data of datas; let i = index;">
-                    <td>{{i}}#</td>
+                    <td>#{{i}}</td>
                     <td>{{data.name}}</td>
                     <td>
                         <figure [value]="data.value" [currency]="data.currency"></figure>
                     </td>
-                </tr>
-                <tr>
-                    <td>2#</td>
-                    <td>CITI-Swap:</td>
-                    <td>4000</td>
-                </tr>
-                <tr>
-                    <td>3#</td>
-                    <td>BNP-Swap:</td>
-                    <td>3000</td>
-                </tr>
-                <tr>
-                    <td>4#</td>
-                    <td>SG-Repo:</td>
-                    <td>2000</td>
-                </tr>
-                <tr>
-                    <td>5#</td>
-                    <td>SG-Repo:</td>
-                    <td>2000</td>
                 </tr>
             </tbody>
         </table>

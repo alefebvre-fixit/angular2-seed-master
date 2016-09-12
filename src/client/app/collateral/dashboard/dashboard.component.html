@@ -19,18 +19,13 @@ There will be something here
             </div>
         </div>
         <div class="col-md-4">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h3 class="panel-title">Rounding</h3>
-                </div>
-                <div class="panel-body">
-                    Rounding details
-                </div>
-            </div>
+
+            <ranked-list [datas]="topMarginCall" [config]="topMarginCallConfig"></ranked-list>
+
         </div>
         <div class="col-md-4">
 
-            <ranked-list></ranked-list>
+            <ranked-list [datas]="topExposures" [config]="topExposuresConfig"></ranked-list>
 
         </div>
     </div>
