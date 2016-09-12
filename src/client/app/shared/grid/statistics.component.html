@@ -1,39 +1,45 @@
 
 
 <div class="figures collateral-panel">
-    <table>
-        <tbody>
-            <tr>
-                <td *ngFor="let data of datas;">
-                    <!--
-                    <div class="stat-left">
-                    <div class="stat-chart" *ngIf="data.history != undefined"> 
+    <div class="statistic-header">
+        <ng-content select="statistics-header"></ng-content>
+    </div>
+    <div class="statistic-body">
+        <table>
+            <tbody>
+                <tr>
+                    <td *ngFor="let data of datas;">
+                        <!--
+                        <div class="stat-left">
+                        <div class="stat-chart" *ngIf="data.history != undefined"> 
 
-                        <base-chart class="chart"
-                        [datasets]="barChartData"
-                        [labels]="barChartLabels"
-                        [options]="barChartOptions"
-                        [legend]="barChartLegend"
-                        [chartType]="barChartType"
-                        ></base-chart>
+                            <base-chart class="chart"
+                            [datasets]="barChartData"
+                            [labels]="barChartLabels"
+                            [options]="barChartOptions"
+                            [legend]="barChartLegend"
+                            [chartType]="barChartType"
+                            ></base-chart>
 
-                    </div>
-                    <div class="stat-number">
+                        </div>
+                        <div class="stat-number">
 
-                    <figure [value]="data.value" [currency]="data.currency"></figure>
-                    <div class="grey">{{data.name}}</div>
+                        <figure [value]="data.value" [currency]="data.currency"></figure>
+                        <div class="grey">{{data.name}}</div>
 
-                    </div>
-                    -->
+                        </div>
+                        -->
 
-                    <figure [value]="data.value" [currency]="data.currency"></figure>
-                    <div class="grey">{{data.name}}</div>
+                        <figure [value]="data.value" [currency]="data.currency"></figure>
+                        <div class="grey">{{data.name}}</div>
 
-                </td>
-            </tr>
-        </tbody>
-    </table>
-
-
-
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+        
+    <div class="statistic-footer">
+        <ng-content select="statistics-footer"></ng-content>
+    </div>
 </div>

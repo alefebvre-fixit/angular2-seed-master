@@ -6,4 +6,5 @@ export * from './exposure';
 export * from './contact';
 export * from './collateral';
 export * from './position';
+export * from './allocation';
 

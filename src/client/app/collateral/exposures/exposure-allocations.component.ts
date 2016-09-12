@@ -1,9 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, SimpleChanges } from '@angular/core';
 import { Router, ROUTER_DIRECTIVES } from '@angular/router';
 
-import { SectionComponent } from '../../shared/index';
-import { InventoryService } from '../../services/index';
-import { TYPEAHEAD_DIRECTIVES } from 'ng2-bootstrap/components/typeahead';
+import { SectionComponent, GridConfiguration, GridComponent, Statistic, Statistics, AllocationStatisticFactory } from '../../shared/index';
+import { InventoryService, CollateralService } from '../../services/index';
+import { Collateral, Exposure, Allocation } from '../../models/index';
+import { PROGRESSBAR_DIRECTIVES, TYPEAHEAD_DIRECTIVES } from 'ng2-bootstrap/ng2-bootstrap';
+
 import { FormControl, FormGroup } from '@angular/forms';
 import { Observable } from 'rxjs';
 
@@ -13,34 +15,82 @@ import { Observable } from 'rxjs';
   templateUrl: 'exposure-allocations.component.html',
   styleUrls: ['exposure-allocations.component.css'],
   directives: [
-    ROUTER_DIRECTIVES, SectionComponent, TYPEAHEAD_DIRECTIVES
+    ROUTER_DIRECTIVES, SectionComponent, TYPEAHEAD_DIRECTIVES, PROGRESSBAR_DIRECTIVES, GridComponent, Statistics
   ],
-  viewProviders: [ InventoryService ],
+  viewProviders: [ CollateralService ],
 })
 
 export class ExposureAllocationsComponent implements OnInit {
 
+  @Input() exposure: Exposure;
 
-  positions: Object[];
+  private config: GridConfiguration;
+  private statistics: Statistic[];
 
-  constructor(private router: Router, private inventoryService: InventoryService) {
+
+  positions: Collateral[];
+  collateral: Collateral;
+  allocations: Collateral[];
+  allocation: Allocation;
+
+  constructor(private router: Router, private collateralService: CollateralService) {
+
+    this.config = new GridConfiguration(
+      [{ "name": "name", "header": "Name" },
+        { "name": "code", "header": "Code" },
+        { "name": "type", "header": "Type" },
+        { "name": "category", "header": "Category" },
+        { "name": "value", "header": "Value" }
+      ]);
+
+    this.config.view = false;
+    this.config.edit = false;
+
 
     this.dataSource = Observable.create((observer:any) => {
       // Runs on every search
       observer.next(this.asyncSelected);
     }).mergeMap((token:string) => this.getStatesAsObservable(token));
 
+
+    this.allocations = new Array<Collateral>();
+
   }
 
   ngOnInit(): void {
+
+    this.exposure  = new Exposure();
+    this.allocation = new Allocation(this.exposure);
+    this.statistics = AllocationStatisticFactory.create(this.allocation);
+
     this.loadPositions();
   }
 
+
+  ngOnChanges(changes: SimpleChanges){
+    if (this.exposure != undefined){
+      this.allocation = new Allocation(this.exposure);
+      this.statistics = AllocationStatisticFactory.create(this.allocation);    
+    }
+  }
+
+
   loadPositions(): void {
-    this.inventoryService.getPositions().subscribe((positions: Object[]) => {
+    this.collateralService.collaterals$.subscribe((positions: Collateral[]) => {
       this.positions = positions;
     });
   }
+
+  cancel(){
+    this.collateral = undefined;
+  }
+
+  add(collateral: Collateral){
+    this.allocation.add(collateral);
+    this.statistics = AllocationStatisticFactory.create(this.allocation);    
+    this.allocations.push(collateral);
+  }
+
 
   public stateCtrl:FormControl = new FormControl();
  
@@ -75,7 +125,7 @@ export class ExposureAllocationsComponent implements OnInit {
   }
  
   public typeaheadOnSelect(e:any):void {
-    console.log('Selected value: ', e.item);
+    this.collateral = e.item;
   }
 
 

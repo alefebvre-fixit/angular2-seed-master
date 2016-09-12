@@ -2,13 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ROUTER_DIRECTIVES } from '@angular/router';
 import { SectionComponent } from '../../shared/index';
 import {CHART_DIRECTIVES} from 'ng2-charts/ng2-charts';
+import { RankedList} from '../../shared/index';
 
 @Component({
   moduleId: module.id,
   templateUrl: 'dashboard.component.html',
   styleUrls: ['dashboard.component.css'],
   directives: [
-    ROUTER_DIRECTIVES,SectionComponent,CHART_DIRECTIVES
+    ROUTER_DIRECTIVES,SectionComponent,CHART_DIRECTIVES,RankedList
   ],
   viewProviders: [],
 })

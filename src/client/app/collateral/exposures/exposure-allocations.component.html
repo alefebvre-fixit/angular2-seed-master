@@ -1,13 +1,4 @@
 
-
-  <!-- Asynchronous results -->
-
-
-
-
-  <h4>Asynchronous results</h4>
-  <pre class="card card-block card-header">Model: {{asyncSelected | json}}</pre>
-
   <div *ngIf="typeaheadLoading===true">
     <i class="glyphicon glyphicon-refresh ng-hide" style=""></i>
   </div>
@@ -17,9 +8,11 @@
 
 
 
-  <br>
-  <br>
-
+    <statistics [datas]="statistics">
+            <statistics-footer>
+                <progressbar [max]="-allocation.required" [value]="allocation.allocated"></progressbar>
+            </statistics-footer>
+    </statistics>
 
   <div class="panel panel-default collateral-panel">
         <div class="panel-heading table-toolbar">
@@ -27,14 +20,14 @@
                 <tr>
                     <td width="50%">
                         <input [(ngModel)]="asyncSelected"
-                              [typeahead]="positions"
+                              [typeahead]="dataSource"
                               (typeaheadLoading)="changeTypeaheadLoading($event)"
                               (typeaheadNoResults)="changeTypeaheadNoResults($event)"
                               (typeaheadOnSelect)="typeaheadOnSelect($event)"
                               [typeaheadOptionsLimit]="7"
                               [typeaheadOptionField]="'name'"
                               placeholder="Locations loaded with timeout"
-                              class="form-control" width="200px">
+                              class="form-control">
                     </td>
                     <td width="50%" style="text-align:right;">
                         <button type="button" class="btn btn-primary" (click)="openInventory()">INVENTORY</button>
@@ -42,39 +35,75 @@
                 </tr>
             </table>
         </div>
-    <div class="panel-body">
-        <div *ngIf="collateral != undefined">
+    <div class="panel-body" *ngIf="collateral!=null">
+
+            <div class="row">
+            <div class="col-md-6">
+
             <table class="data-list">
                 <tbody>
                     <tr>
-                        <th>Country:</th>
-                        <td>{{collateral.country}}</td>
+                        <th>Id:</th>
+                        <td>{{collateral.id}}</td>
                     </tr>
                     <tr>
-                        <th>Address:</th>
-                        <td>{{collateral.streetAddress}}</td>
+                        <th>Code:</th>
+                        <td>{{collateral.code}}</td>
                     </tr>
                     <tr>
-                        <th>City:</th>
-                        <td>{{collateral.city}}</td>
-                    </tr>
-                    <tr>
-                        <th>Comment:</th>
-                        <td>{{collateral.comment}}</td>
+                        <th>Name:</th>
+                        <td>{{collateral.name}}</td>
                     </tr>
                 </tbody>
             </table>
-        </div>
+
+            </div>
+            <div class="col-md-6">
+
+            <table class="data-list">
+                <tbody>
+                    <tr>
+                        <th>Type:</th>
+                        <td>{{collateral.type}}</td>
+                    </tr>
+                    <tr>
+                        <th>Category:</th>
+                        <td>{{collateral.category}}</td>
+                    </tr>
+                    <tr>
+                        <th>Value:</th>
+                        <td>{{collateral.value}}</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group pull-right">
+                            <button type="button" class="btn btn-default" (click)="cancel()">Cancel</button>
+                            <button type="button" class="btn btn-primary" (click)="add(collateral)">Add</button>
+                    </div>
+                </div>
+            </div>
     </div>
-
-
-
-
-    Hello
-    {{collaterals | json}}
-
-
-
-
-
 </div>
+
+<grid [datas]="allocations" [config]="config" [loading]="loading">
+        <table-buttons>
+        </table-buttons>
+</grid>
+
+  <br>
+  <br>
+  <br>
+  <br> 
+  <br>
+  <br> 
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>

@@ -11,3 +11,6 @@ export * from './grid/figure.component';
 export * from './grid/statistics.component';
 export * from './grid/statistic';
 export * from './grid/impl/index';
+
+
+export * from './analytics/ranked-list.component';
