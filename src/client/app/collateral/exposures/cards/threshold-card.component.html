@@ -1,27 +1,44 @@
-<div class="card">
-    <div class="card-header">
-        <div>
-            <h6>Threshold</h6>
-        </div>
+<div class="panel panel-default analytics">
+    <div class="panel-heading">
+        <h4 class="panel-title analytics-title">Threshold</h4>
     </div>
-
-    <div class="card-body" style="font-size:15px">
-        <div>
-            value :
-            <figure [value]="threshold.value" [currency]="'USD'"></figure>
-        </div>
-        <div>
-            entity : {{threshold.legalEntity}}
-        </div>
-        <div>
-            rating : {{threshold.rating}}
-        </div>
-        <div>
-            agency : {{threshold.agency}}
-        </div>
-        <div>
-            seniority : {{threshold.seniority}}
-        </div>
-
+    <div class="panel-body">
+        <table class="analytics-list">
+            <tbody>
+                <tr>
+                    <td>Value</td>
+                    <td>
+                        <figure [value]="threshold.value" [currency]="'USD'"></figure>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Entity</td>
+                    <td>
+                        {{threshold.legalEntity}}
+                    </td>
+                </tr>
+                <tr>
+                    <td>Rating</td>
+                    <td>
+                        {{threshold.rating}}
+                    </td>
+                </tr>
+                <tr>
+                    <td>Agency</td>
+                    <td>
+                        {{threshold.agency}}
+                    </td>
+                </tr>     
+                <tr>
+                    <td>Seniority</td>
+                    <td>
+                        {{threshold.seniority}}
+                    </td>
+                </tr>                
+            </tbody>
+        </table>
+    </div>
+    <div class="panel-footer">
+        <a href="#" class="btn btn-default">View All</a>
     </div>
 </div>

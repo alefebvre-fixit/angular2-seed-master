@@ -3,8 +3,8 @@
         "id": "0",
         "code": "code-0",
         "name": "exposure Name-0",
-        "status": "priced",
         "description": "exposure Description-0",
+        "status": "EXECUTED",
         "threshold": {
             "agency": "Moody's",
             "value": 100000.0,
@@ -18,6 +18,18 @@
             "legalEntity": "Chase",
             "rating": "BB+",
             "seniority": "Secured"
+        },
+        "dispute": {
+            "disputed": false,
+            "excluded": false,
+            "agreedAmount": 0.0,
+            "disputeAmount": 0.0,
+            "disputeReason": "",
+            "disputeComment": "",
+            "disputeStatus": "None",
+            "acceptanceStatus": "",
+            "disputeAge": 0,
+            "directionalDisputeAge": 0
         },
         "currency": "USD",
         "cashPosition": 90000.0,
@@ -29,8 +41,8 @@
         "id": "1",
         "code": "code-1",
         "name": "exposure Name-1",
-        "status": "priced",
         "description": "exposure Description-1",
+        "status": "PRICED",
         "threshold": {
             "agency": "Moody's",
             "value": 100000.0,
@@ -44,6 +56,18 @@
             "legalEntity": "Chase",
             "rating": "BB+",
             "seniority": "Secured"
+        },
+        "dispute": {
+            "disputed": false,
+            "excluded": false,
+            "agreedAmount": 0.0,
+            "disputeAmount": 0.0,
+            "disputeReason": "",
+            "disputeComment": "",
+            "disputeStatus": "None",
+            "acceptanceStatus": "",
+            "disputeAge": 0,
+            "directionalDisputeAge": 0
         },
         "currency": "USD",
         "cashPosition": 90000.0,
@@ -55,8 +79,8 @@
         "id": "2",
         "code": "code-2",
         "name": "exposure Name-2",
-        "status": "priced",
         "description": "exposure Description-2",
+        "status": "ALLOCATED",
         "threshold": {
             "agency": "Moody's",
             "value": 100000.0,
@@ -70,6 +94,18 @@
             "legalEntity": "Chase",
             "rating": "BB+",
             "seniority": "Secured"
+        },
+        "dispute": {
+            "disputed": false,
+            "excluded": false,
+            "agreedAmount": 0.0,
+            "disputeAmount": 0.0,
+            "disputeReason": "",
+            "disputeComment": "",
+            "disputeStatus": "None",
+            "acceptanceStatus": "",
+            "disputeAge": 0,
+            "directionalDisputeAge": 0
         },
         "currency": "USD",
         "cashPosition": 90000.0,
@@ -81,8 +117,8 @@
         "id": "3",
         "code": "code-3",
         "name": "exposure Name-3",
-        "status": "priced",
         "description": "exposure Description-3",
+        "status": "ALLOCATED",
         "threshold": {
             "agency": "Moody's",
             "value": 100000.0,
@@ -96,6 +132,18 @@
             "legalEntity": "Chase",
             "rating": "BB+",
             "seniority": "Secured"
+        },
+        "dispute": {
+            "disputed": false,
+            "excluded": false,
+            "agreedAmount": 0.0,
+            "disputeAmount": 0.0,
+            "disputeReason": "",
+            "disputeComment": "",
+            "disputeStatus": "None",
+            "acceptanceStatus": "",
+            "disputeAge": 0,
+            "directionalDisputeAge": 0
         },
         "currency": "USD",
         "cashPosition": 90000.0,
@@ -107,8 +155,8 @@
         "id": "4",
         "code": "code-4",
         "name": "exposure Name-4",
-        "status": "priced",
         "description": "exposure Description-4",
+        "status": "VALIDATED",
         "threshold": {
             "agency": "Moody's",
             "value": 100000.0,
@@ -122,6 +170,18 @@
             "legalEntity": "Chase",
             "rating": "BB+",
             "seniority": "Secured"
+        },
+        "dispute": {
+            "disputed": false,
+            "excluded": false,
+            "agreedAmount": 0.0,
+            "disputeAmount": 0.0,
+            "disputeReason": "",
+            "disputeComment": "",
+            "disputeStatus": "None",
+            "acceptanceStatus": "",
+            "disputeAge": 0,
+            "directionalDisputeAge": 0
         },
         "currency": "USD",
         "cashPosition": 90000.0,
@@ -133,8 +193,8 @@
         "id": "5",
         "code": "code-5",
         "name": "exposure Name-5",
-        "status": "priced",
         "description": "exposure Description-5",
+        "status": "PRICED",
         "threshold": {
             "agency": "Moody's",
             "value": 100000.0,
@@ -148,6 +208,18 @@
             "legalEntity": "Chase",
             "rating": "BB+",
             "seniority": "Secured"
+        },
+        "dispute": {
+            "disputed": false,
+            "excluded": false,
+            "agreedAmount": 0.0,
+            "disputeAmount": 0.0,
+            "disputeReason": "",
+            "disputeComment": "",
+            "disputeStatus": "None",
+            "acceptanceStatus": "",
+            "disputeAge": 0,
+            "directionalDisputeAge": 0
         },
         "currency": "USD",
         "cashPosition": 90000.0,
@@ -159,8 +231,8 @@
         "id": "6",
         "code": "code-6",
         "name": "exposure Name-6",
-        "status": "priced",
         "description": "exposure Description-6",
+        "status": "ALLOCATED",
         "threshold": {
             "agency": "Moody's",
             "value": 100000.0,
@@ -174,6 +246,18 @@
             "legalEntity": "Chase",
             "rating": "BB+",
             "seniority": "Secured"
+        },
+        "dispute": {
+            "disputed": false,
+            "excluded": false,
+            "agreedAmount": 0.0,
+            "disputeAmount": 0.0,
+            "disputeReason": "",
+            "disputeComment": "",
+            "disputeStatus": "None",
+            "acceptanceStatus": "",
+            "disputeAge": 0,
+            "directionalDisputeAge": 0
         },
         "currency": "USD",
         "cashPosition": 90000.0,
@@ -185,8 +269,8 @@
         "id": "7",
         "code": "code-7",
         "name": "exposure Name-7",
-        "status": "priced",
         "description": "exposure Description-7",
+        "status": "EXECUTED",
         "threshold": {
             "agency": "Moody's",
             "value": 100000.0,
@@ -200,6 +284,18 @@
             "legalEntity": "Chase",
             "rating": "BB+",
             "seniority": "Secured"
+        },
+        "dispute": {
+            "disputed": false,
+            "excluded": false,
+            "agreedAmount": 0.0,
+            "disputeAmount": 0.0,
+            "disputeReason": "",
+            "disputeComment": "",
+            "disputeStatus": "None",
+            "acceptanceStatus": "",
+            "disputeAge": 0,
+            "directionalDisputeAge": 0
         },
         "currency": "USD",
         "cashPosition": 90000.0,
@@ -211,8 +307,8 @@
         "id": "8",
         "code": "code-8",
         "name": "exposure Name-8",
-        "status": "priced",
         "description": "exposure Description-8",
+        "status": "RESOLVED",
         "threshold": {
             "agency": "Moody's",
             "value": 100000.0,
@@ -226,6 +322,18 @@
             "legalEntity": "Chase",
             "rating": "BB+",
             "seniority": "Secured"
+        },
+        "dispute": {
+            "disputed": false,
+            "excluded": false,
+            "agreedAmount": 0.0,
+            "disputeAmount": 0.0,
+            "disputeReason": "",
+            "disputeComment": "",
+            "disputeStatus": "None",
+            "acceptanceStatus": "",
+            "disputeAge": 0,
+            "directionalDisputeAge": 0
         },
         "currency": "USD",
         "cashPosition": 90000.0,
@@ -237,8 +345,8 @@
         "id": "9",
         "code": "code-9",
         "name": "exposure Name-9",
-        "status": "priced",
         "description": "exposure Description-9",
+        "status": "RESOLVED",
         "threshold": {
             "agency": "Moody's",
             "value": 100000.0,
@@ -252,6 +360,18 @@
             "legalEntity": "Chase",
             "rating": "BB+",
             "seniority": "Secured"
+        },
+        "dispute": {
+            "disputed": false,
+            "excluded": false,
+            "agreedAmount": 0.0,
+            "disputeAmount": 0.0,
+            "disputeReason": "",
+            "disputeComment": "",
+            "disputeStatus": "None",
+            "acceptanceStatus": "",
+            "disputeAge": 0,
+            "directionalDisputeAge": 0
         },
         "currency": "USD",
         "cashPosition": 90000.0,
@@ -263,8 +383,8 @@
         "id": "10",
         "code": "code-10",
         "name": "exposure Name-10",
-        "status": "priced",
         "description": "exposure Description-10",
+        "status": "EXECUTED",
         "threshold": {
             "agency": "Moody's",
             "value": 100000.0,
@@ -278,6 +398,18 @@
             "legalEntity": "Chase",
             "rating": "BB+",
             "seniority": "Secured"
+        },
+        "dispute": {
+            "disputed": false,
+            "excluded": false,
+            "agreedAmount": 0.0,
+            "disputeAmount": 0.0,
+            "disputeReason": "",
+            "disputeComment": "",
+            "disputeStatus": "None",
+            "acceptanceStatus": "",
+            "disputeAge": 0,
+            "directionalDisputeAge": 0
         },
         "currency": "USD",
         "cashPosition": 90000.0,
@@ -289,8 +421,8 @@
         "id": "11",
         "code": "code-11",
         "name": "exposure Name-11",
-        "status": "priced",
         "description": "exposure Description-11",
+        "status": "PRICED",
         "threshold": {
             "agency": "Moody's",
             "value": 100000.0,
@@ -304,6 +436,18 @@
             "legalEntity": "Chase",
             "rating": "BB+",
             "seniority": "Secured"
+        },
+        "dispute": {
+            "disputed": false,
+            "excluded": false,
+            "agreedAmount": 0.0,
+            "disputeAmount": 0.0,
+            "disputeReason": "",
+            "disputeComment": "",
+            "disputeStatus": "None",
+            "acceptanceStatus": "",
+            "disputeAge": 0,
+            "directionalDisputeAge": 0
         },
         "currency": "USD",
         "cashPosition": 90000.0,
@@ -315,8 +459,8 @@
         "id": "12",
         "code": "code-12",
         "name": "exposure Name-12",
-        "status": "priced",
         "description": "exposure Description-12",
+        "status": "VALIDATED",
         "threshold": {
             "agency": "Moody's",
             "value": 100000.0,
@@ -330,6 +474,18 @@
             "legalEntity": "Chase",
             "rating": "BB+",
             "seniority": "Secured"
+        },
+        "dispute": {
+            "disputed": false,
+            "excluded": false,
+            "agreedAmount": 0.0,
+            "disputeAmount": 0.0,
+            "disputeReason": "",
+            "disputeComment": "",
+            "disputeStatus": "None",
+            "acceptanceStatus": "",
+            "disputeAge": 0,
+            "directionalDisputeAge": 0
         },
         "currency": "USD",
         "cashPosition": 90000.0,
@@ -341,8 +497,8 @@
         "id": "13",
         "code": "code-13",
         "name": "exposure Name-13",
-        "status": "priced",
         "description": "exposure Description-13",
+        "status": "RESOLVED",
         "threshold": {
             "agency": "Moody's",
             "value": 100000.0,
@@ -356,6 +512,18 @@
             "legalEntity": "Chase",
             "rating": "BB+",
             "seniority": "Secured"
+        },
+        "dispute": {
+            "disputed": false,
+            "excluded": false,
+            "agreedAmount": 0.0,
+            "disputeAmount": 0.0,
+            "disputeReason": "",
+            "disputeComment": "",
+            "disputeStatus": "None",
+            "acceptanceStatus": "",
+            "disputeAge": 0,
+            "directionalDisputeAge": 0
         },
         "currency": "USD",
         "cashPosition": 90000.0,
@@ -367,8 +535,8 @@
         "id": "14",
         "code": "code-14",
         "name": "exposure Name-14",
-        "status": "priced",
         "description": "exposure Description-14",
+        "status": "VALIDATED",
         "threshold": {
             "agency": "Moody's",
             "value": 100000.0,
@@ -382,6 +550,18 @@
             "legalEntity": "Chase",
             "rating": "BB+",
             "seniority": "Secured"
+        },
+        "dispute": {
+            "disputed": false,
+            "excluded": false,
+            "agreedAmount": 0.0,
+            "disputeAmount": 0.0,
+            "disputeReason": "",
+            "disputeComment": "",
+            "disputeStatus": "None",
+            "acceptanceStatus": "",
+            "disputeAge": 0,
+            "directionalDisputeAge": 0
         },
         "currency": "USD",
         "cashPosition": 90000.0,
@@ -393,8 +573,8 @@
         "id": "15",
         "code": "code-15",
         "name": "exposure Name-15",
-        "status": "priced",
         "description": "exposure Description-15",
+        "status": "EXECUTED",
         "threshold": {
             "agency": "Moody's",
             "value": 100000.0,
@@ -408,6 +588,18 @@
             "legalEntity": "Chase",
             "rating": "BB+",
             "seniority": "Secured"
+        },
+        "dispute": {
+            "disputed": false,
+            "excluded": false,
+            "agreedAmount": 0.0,
+            "disputeAmount": 0.0,
+            "disputeReason": "",
+            "disputeComment": "",
+            "disputeStatus": "None",
+            "acceptanceStatus": "",
+            "disputeAge": 0,
+            "directionalDisputeAge": 0
         },
         "currency": "USD",
         "cashPosition": 90000.0,
@@ -419,8 +611,8 @@
         "id": "16",
         "code": "code-16",
         "name": "exposure Name-16",
-        "status": "priced",
         "description": "exposure Description-16",
+        "status": "EXECUTED",
         "threshold": {
             "agency": "Moody's",
             "value": 100000.0,
@@ -434,6 +626,18 @@
             "legalEntity": "Chase",
             "rating": "BB+",
             "seniority": "Secured"
+        },
+        "dispute": {
+            "disputed": false,
+            "excluded": false,
+            "agreedAmount": 0.0,
+            "disputeAmount": 0.0,
+            "disputeReason": "",
+            "disputeComment": "",
+            "disputeStatus": "None",
+            "acceptanceStatus": "",
+            "disputeAge": 0,
+            "directionalDisputeAge": 0
         },
         "currency": "USD",
         "cashPosition": 90000.0,
@@ -445,8 +649,8 @@
         "id": "17",
         "code": "code-17",
         "name": "exposure Name-17",
-        "status": "priced",
         "description": "exposure Description-17",
+        "status": "EXECUTED",
         "threshold": {
             "agency": "Moody's",
             "value": 100000.0,
@@ -460,6 +664,18 @@
             "legalEntity": "Chase",
             "rating": "BB+",
             "seniority": "Secured"
+        },
+        "dispute": {
+            "disputed": false,
+            "excluded": false,
+            "agreedAmount": 0.0,
+            "disputeAmount": 0.0,
+            "disputeReason": "",
+            "disputeComment": "",
+            "disputeStatus": "None",
+            "acceptanceStatus": "",
+            "disputeAge": 0,
+            "directionalDisputeAge": 0
         },
         "currency": "USD",
         "cashPosition": 90000.0,
@@ -471,8 +687,8 @@
         "id": "18",
         "code": "code-18",
         "name": "exposure Name-18",
-        "status": "priced",
         "description": "exposure Description-18",
+        "status": "DISPUTED",
         "threshold": {
             "agency": "Moody's",
             "value": 100000.0,
@@ -486,6 +702,18 @@
             "legalEntity": "Chase",
             "rating": "BB+",
             "seniority": "Secured"
+        },
+        "dispute": {
+            "disputed": false,
+            "excluded": false,
+            "agreedAmount": 0.0,
+            "disputeAmount": 0.0,
+            "disputeReason": "",
+            "disputeComment": "",
+            "disputeStatus": "None",
+            "acceptanceStatus": "",
+            "disputeAge": 0,
+            "directionalDisputeAge": 0
         },
         "currency": "USD",
         "cashPosition": 90000.0,
@@ -497,8 +725,8 @@
         "id": "19",
         "code": "code-19",
         "name": "exposure Name-19",
-        "status": "priced",
         "description": "exposure Description-19",
+        "status": "EXECUTED",
         "threshold": {
             "agency": "Moody's",
             "value": 100000.0,
@@ -512,6 +740,18 @@
             "legalEntity": "Chase",
             "rating": "BB+",
             "seniority": "Secured"
+        },
+        "dispute": {
+            "disputed": false,
+            "excluded": false,
+            "agreedAmount": 0.0,
+            "disputeAmount": 0.0,
+            "disputeReason": "",
+            "disputeComment": "",
+            "disputeStatus": "None",
+            "acceptanceStatus": "",
+            "disputeAge": 0,
+            "directionalDisputeAge": 0
         },
         "currency": "USD",
         "cashPosition": 90000.0,
