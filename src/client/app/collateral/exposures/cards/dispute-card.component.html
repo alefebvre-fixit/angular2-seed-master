@@ -1,43 +1,44 @@
 <div class="panel panel-default analytics">
     <div class="panel-heading">
-        <h4 class="panel-title analytics-title">MTA</h4>
+        <h4 class="panel-title analytics-title">Dispute</h4>
     </div>
     <div class="panel-body">
         <table class="analytics-list">
             <tbody>
                 <tr>
-                    <td>Value</td>
+                    <td>Status</td>
                     <td>
-                        <figure [value]="mta.value" [currency]="'USD'"></figure>
+                        {{dispute.disputeStatus}}
                     </td>
                 </tr>
                 <tr>
-                    <td>Entity</td>
+                    <td>Reason</td>
                     <td>
-                        {{mta.legalEntity}}
+                        {{dispute.disputeReason}}
                     </td>
                 </tr>
                 <tr>
-                    <td>Rating</td>
+                    <td>Age</td>
                     <td>
-                        {{mta.rating}}
+                        {{dispute.disputeAge}} day(s)
                     </td>
                 </tr>
                 <tr>
-                    <td>Agency</td>
+                    <td>Amount</td>
                     <td>
-                        {{mta.agency}}
+                        <figure [value]="dispute.disputeAmount" [currency]="'USD'"></figure>
                     </td>
                 </tr>     
                 <tr>
-                    <td>Seniority</td>
+                    <td>Agreed Amount</td>
                     <td>
-                        {{mta.seniority}}
+                        <figure [value]="dispute.agreedAmount" [currency]="'USD'"></figure>
                     </td>
                 </tr>                
             </tbody>
         </table>
     </div>
     <div class="panel-footer">
+        <a href="#" class="btn btn-default">Open Dispute</a>
     </div>
 </div>

@@ -1,6 +1,6 @@
 import { Component, OnInit, OnChanges, Input, SimpleChanges} from '@angular/core';
 import { FigureComponent, Statistics, Statistic, StatisticFactory} from '../../shared/index';
-import { MTACard, ThresholdCard, RoundingCard} from './cards/index';
+import { MTACard, ThresholdCard, RoundingCard, DisputeCard} from './cards/index';
 import { Exposure} from '../../models/index';
 
 @Component({
@@ -9,7 +9,7 @@ import { Exposure} from '../../models/index';
   templateUrl: 'exposure-summary.component.html',
   styleUrls: ['exposure-summary.component.css'],
   directives: [
-    MTACard, ThresholdCard, RoundingCard, Statistics
+    MTACard, ThresholdCard, RoundingCard, DisputeCard,  Statistics
   ],
   viewProviders: [],
 })

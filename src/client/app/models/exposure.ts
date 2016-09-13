@@ -17,6 +17,8 @@ export class Exposure{
     threshold: Threshold;
     mta: MTA;
 
+    dispute: Dispute;
+
 }
 
 export class Threshold{
@@ -43,6 +45,22 @@ export class MTA{
     rating: string;
     seniority: string;
     legalEntity: string;
+
+}
+
+
+export class Dispute {
+    
+    disputed : boolean;
+    excluded : boolean;
+    agreedAmount : number;
+    disputeAmount : number;
+    disputeReason : string;
+    disputeComment : string;
+    disputeStatus : string;
+    acceptanceStatus : string;
+    disputeAge : number;
+    directionalDisputeAge : number;
 
 }
 
